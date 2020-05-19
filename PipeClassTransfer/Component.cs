@@ -1,4 +1,6 @@
-﻿namespace PipeClassTransfer
+﻿using System;
+
+namespace PipeClassTransfer
 {
     /// <summary>
     /// Common Type for Pipe-Class Components
@@ -8,6 +10,11 @@
     [System.Xml.Serialization.XmlInclude(typeof(Reducer))]
     public class Component
     {
+        /// <summary>
+        /// Unique Id of this Component
+        /// </summary>
+        [System.Xml.Serialization.XmlAttribute]
+        public Guid ComponentId { get; set; } = Guid.NewGuid();
 
         /// <summary>
         /// Description
@@ -43,7 +50,7 @@
         /// Group ID of this Component
         /// </summary>
         [System.Xml.Serialization.XmlAttribute]
-        public string GroupId { get; set; } = string.Empty;
+        public Guid GroupId { get; set; } = Guid.Empty;
 
     }
 }
