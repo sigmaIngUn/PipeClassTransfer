@@ -61,8 +61,7 @@ namespace PipeClassTransfer
         /// <summary>
         /// Material of reinforcement-pad
         /// </summary>
-        [System.Xml.Serialization.XmlAttribute]
-        public string MaterialPad { get; set; } = string.Empty;
+        public Material MaterialPad { get; set; }
         
         /// <summary>
         /// Holds the data of the Tees run pipe

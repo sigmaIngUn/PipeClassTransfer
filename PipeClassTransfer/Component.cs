@@ -45,12 +45,6 @@ namespace PipeClassTransfer
         public string Standard { get; set; } = string.Empty;
 
         /// <summary>
-        /// Material ID
-        /// </summary>
-        [System.Xml.Serialization.XmlAttribute]
-        public string Material { get; set; } = string.Empty;
-        
-        /// <summary>
         /// Length of component
         /// </summary>
         [System.Xml.Serialization.XmlAttribute]
@@ -68,5 +62,9 @@ namespace PipeClassTransfer
         [System.Xml.Serialization.XmlAttribute]
         public Guid GroupId { get; set; } = Guid.Empty;
 
+        /// <summary>
+        /// Material ID
+        /// </summary>
+        public Material Material { get; set; }
     }
 }

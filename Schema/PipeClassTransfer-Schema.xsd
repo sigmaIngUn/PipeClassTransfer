@@ -7,11 +7,19 @@
     </xs:restriction>
   </xs:simpleType>
 
+  <xs:complexType name="Material">
+    <xs:attribute name="ExporterID" type="xs:string"/>
+    <xs:attribute name="MaterialID" type="xs:string"/>
+    <xs:attribute name="Desc" type="xs:string"/>
+  </xs:complexType>
+
   <xs:complexType name="Component">
+    <xs:sequence>
+      <xs:element name="Material" type="Material" maxOccurs="1" minOccurs="1"/>
+    </xs:sequence>
     <xs:attribute name="ComponentId" type="guid"/>
     <xs:attribute name="Desc" type="xs:string"/>
     <xs:attribute name="Standard" type="xs:string"/>
-    <xs:attribute name="Material" type="xs:string"/>
     <xs:attribute name="Length" type="xs:decimal"/>
     <xs:attribute name="V" type="xs:decimal"/>
     <xs:attribute name="GroupId" type="guid"/>
@@ -46,6 +54,7 @@
     <xs:complexContent>
         <xs:extension base="Component">
           <xs:sequence>
+            <xs:element name="MaterialPad" type="Material" maxOccurs="1" minOccurs="1"/>
             <xs:element name="Run" type="Pipe" maxOccurs="1" minOccurs="1"/>
             <xs:element name="Branch" type="Pipe" maxOccurs="1" minOccurs="1"/>
           </xs:sequence>
@@ -55,7 +64,6 @@
           <xs:attribute name="WidthPad" type="xs:decimal"/>
           <xs:attribute name="ThicknessPad" type="xs:decimal"/>
           <xs:attribute name="StrPipeUtil" type="xs:decimal"/>
-          <xs:attribute name="MaterialPad" type="xs:string"/>
         </xs:extension>
     </xs:complexContent>
   </xs:complexType>
