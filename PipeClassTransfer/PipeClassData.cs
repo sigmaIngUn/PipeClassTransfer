@@ -25,7 +25,7 @@ namespace PipeClassTransfer
     {
 
         /// <summary>
-        /// Description on Pipe-Class
+        /// Description of Pipe-Class
         /// </summary>
         [System.Xml.Serialization.XmlAttribute]
         public string Description { get; set; }
