@@ -29,7 +29,7 @@ namespace PipeClassTransfer
         public double S { get; set; }
 
         /// <summary>
-        /// Pipe-Dimension for identification
+        /// Pipe dimension name for identification
         /// </summary>
         [System.Xml.Serialization.XmlAttribute]
         public string Dimension { get; set; } = string.Empty;
