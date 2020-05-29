@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  This file PipeClassTransfer-Schema.xsd is part of PipeClassTransfer
+  Copyright (C) 2020 SIGMA Ingenieurgesellschaft mbH, Unna, Germany
+  
+  PipeClassTransfer is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Lesser General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  PipeClassTransfer is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU Lesser General Public License for more details.
+  
+  You should have received a copy of the GNU Lesser General Public License
+  along with PipeClassTransfer.  If not, see <http://www.gnu.org/licenses/>.
+-->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
   <xs:simpleType name="guid">
+    <xs:annotation>
+      <xs:documentation>
+        Globally Unique Identifier, see https://en.wikipedia.org/wiki/Universally_unique_identifier
+      </xs:documentation>
+    </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
     </xs:restriction>
