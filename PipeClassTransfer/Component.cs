@@ -65,6 +65,6 @@ namespace PipeClassTransfer
         /// <summary>
         /// Material ID
         /// </summary>
-        public Material Material { get; set; }
+        public Material Material { get; set; } = new Material();
     }
 }

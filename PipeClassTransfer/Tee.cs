@@ -61,7 +61,7 @@ namespace PipeClassTransfer
         /// <summary>
         /// Material of reinforcement-pad
         /// </summary>
-        public Material MaterialPad { get; set; }
+        public Material MaterialPad { get; set; } = new Material();
         
         /// <summary>
         /// Holds the data of the Tees run pipe
