@@ -43,12 +43,12 @@ namespace PipeClassTransfer
         /// <summary>
         /// Holds the data of the Reducers large connection
         /// </summary>
-        public Pipe LargeConnection { get; set; }
+        public Pipe LargeConnection { get; set; } = new Pipe();
 
         /// <summary>
         /// Holds the data of the Reducers small connection
         /// </summary>
-        public Pipe SmallConnection { get; set; }
-        
+        public Pipe SmallConnection { get; set; } = new Pipe();
+
     }
 }
