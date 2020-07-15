@@ -34,14 +34,7 @@
             <xs:documentation>
                 Material Definition
             </xs:documentation>
-        </xs:annotation>
-        <xs:attribute name="ExporterID" type="xs:string">
-            <xs:annotation>
-                <xs:documentation>
-                    ID of the exporting Programm see https://github.com/sigmaIngUn/PipeClassTransfer/wiki/KnownExporters />
-                </xs:documentation>
-            </xs:annotation>
-        </xs:attribute>
+        </xs:annotation>        
         <xs:attribute name="MaterialID" type="xs:string">
             <xs:annotation>
                 <xs:documentation>
@@ -440,6 +433,13 @@
                 </xs:annotation>
             </xs:element>
         </xs:sequence>
+		<xs:attribute name="ExporterID" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>
+                    ID of the exporting Programm see https://github.com/sigmaIngUn/PipeClassTransfer/wiki/KnownExporters />
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
         <xs:attribute name="FileVersion" type="xs:integer">
             <xs:annotation>
                 <xs:documentation>

@@ -11,11 +11,7 @@ namespace PipeClassTransfer
     /// </summary>
     public class Material
     {
-        /// <summary>
-        /// ID of the exporting Programm see https://github.com/sigmaIngUn/PipeClassTransfer/wiki/KnownExporters
-        /// </summary>
-        [System.Xml.Serialization.XmlAttribute]
-        public string ExporterID { get; set; } = string.Empty;
+        
 
         /// <summary>
         /// Material-ID acc. to the Definition of the exporting Program
