@@ -46,6 +46,12 @@ namespace PipeClassTransfer
         }
 
         /// <summary>
+        /// ID of the exporting Programm see https://github.com/sigmaIngUn/PipeClassTransfer/wiki/KnownExporters
+        /// </summary>
+        [System.Xml.Serialization.XmlAttribute]
+        public string ExporterID { get; set; } = string.Empty;
+
+        /// <summary>
         /// The File-Version of this instance
         /// </summary>
         [System.Xml.Serialization.XmlAttribute]
