@@ -39,12 +39,6 @@ namespace PipeClassTransfer
         public string Desc { get; set; } = string.Empty;
 
         /// <summary>
-        /// Name of Component-Standard
-        /// </summary>
-        [System.Xml.Serialization.XmlAttribute]
-        public string Standard { get; set; } = string.Empty;
-
-        /// <summary>
         /// Length of component
         /// </summary>
         [System.Xml.Serialization.XmlAttribute]
@@ -66,5 +60,10 @@ namespace PipeClassTransfer
         /// Material ID
         /// </summary>
         public Material Material { get; set; } = new Material();
+
+        /// <summary>
+        /// Standard ID
+        /// </summary>
+        public StandardDef Standard { get; set; } = new StandardDef();
     }
 }

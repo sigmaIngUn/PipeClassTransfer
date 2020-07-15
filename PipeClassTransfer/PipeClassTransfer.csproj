@@ -49,6 +49,7 @@
     <Compile Include="PipeClassTransferData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reducer.cs" />
+    <Compile Include="StandardDef.cs" />
     <Compile Include="Tee.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
