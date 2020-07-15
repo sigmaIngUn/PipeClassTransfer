@@ -65,7 +65,10 @@ namespace PipeClassTransfer
         [System.Xml.Serialization.XmlAttribute]
         public double C_Allowance { get; set; }
 
-        
+        /// <summary>
+        /// Mill-Tolerance Standard ID
+        /// </summary>
+        public StandardDef C_Mill_Standard { get; set; } = new StandardDef();
         
     }
 }

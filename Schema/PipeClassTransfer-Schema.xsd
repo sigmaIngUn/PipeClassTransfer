@@ -51,6 +51,28 @@
         </xs:attribute>
     </xs:complexType>
 
+    <xs:complexType name="StandardDef">
+        <xs:annotation>
+            <xs:documentation>
+                Standard Definition
+            </xs:documentation>
+        </xs:annotation>        
+        <xs:attribute name="StandardID" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>
+                    Standard-ID acc. to the Definition of the exporting Program
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="Desc" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>
+                    Descriptive Name of the Definition as a Fallback-Value for the user to choose the correct Standard on import
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+
     <xs:complexType name="Component">
         <xs:annotation>
             <xs:documentation>
@@ -62,6 +84,13 @@
                 <xs:annotation>
                     <xs:documentation>
                         Definition of Material
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Standard" type="StandardDef" maxOccurs="1" minOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        Definition of Component Standard
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
@@ -77,13 +106,6 @@
             <xs:annotation>
                 <xs:documentation>
                     Description of the Component
-                </xs:documentation>
-            </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="Standard" type="xs:string">
-            <xs:annotation>
-                <xs:documentation>
-                    Name of Component-Standard
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
@@ -119,6 +141,15 @@
         </xs:annotation>
         <xs:complexContent>
             <xs:extension base="Component">
+                <xs:sequence>
+                  <xs:element name="C_Mill_Standard" type="StandardDef" maxOccurs="1" minOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>
+                        Definition of Components Mill-Tolerance Standard
+                      </xs:documentation>
+                   </xs:annotation>
+                  </xs:element>
+                </xs:sequence>
                 <xs:attribute name="S" type="xs:decimal">
                     <xs:annotation>
                         <xs:documentation>
