@@ -31,9 +31,14 @@ namespace PipeClassTransfer
         public string Description { get; set; }
         
         /// <summary>
-        /// Components of this Pipe-Class
+        /// List of Components of this Pipe-Class
         /// </summary>
         public List<Component> Components { get; set; } = new List<Component>();
+
+        /// <summary>
+        /// List of Load cases of this Pipe-Class
+        /// </summary>
+        public List<LoadcaseData> Loadcases { get; set; } = new List<LoadcaseData>();
 
     }
 }
