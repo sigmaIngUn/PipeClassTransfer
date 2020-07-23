@@ -33,6 +33,12 @@ namespace PipeClassTransfer
         public Guid ComponentId { get; set; } = Guid.NewGuid();
 
         /// <summary>
+        /// The calculation Standard used for the analysis of this component
+        /// </summary>
+        [System.Xml.Serialization.XmlAttribute]
+        public string CalcBase { get; set; } = string.Empty;
+
+        /// <summary>
         /// Description
         /// </summary>
         [System.Xml.Serialization.XmlAttribute]
