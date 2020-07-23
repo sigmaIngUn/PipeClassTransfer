@@ -129,7 +129,7 @@
                 Loadcase Definition
             </xs:documentation>
         </xs:annotation>
-        <xs:attribute name="LCId" type="guid" use="required">
+        <xs:attribute name="LoadcaseDataId" type="guid" use="required">
             <xs:annotation>
                 <xs:documentation>
                     Unique Id of the Loadcase
