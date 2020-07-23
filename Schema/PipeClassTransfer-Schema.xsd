@@ -29,20 +29,49 @@
         </xs:restriction>
     </xs:simpleType>
 
+    <xs:complexType name="LC">
+        <xs:annotation>
+            <xs:documentation>
+                Loadcase Definition
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="LCId" type="guid" use="required">
+            <xs:annotation>
+                <xs:documentation>
+                    Unique Id of the Loadcase
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="Temperature" type="xs:decimal" use="required">
+            <xs:annotation>
+                <xs:documentation>
+                    Temperature of this Loadcase
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="Desc" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>
+                    Description of the Loadcase
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+
     <xs:complexType name="Material">
         <xs:annotation>
             <xs:documentation>
                 Material Definition
             </xs:documentation>
         </xs:annotation>        
-        <xs:attribute name="MaterialID" type="xs:string">
+        <xs:attribute name="MaterialID" type="xs:string" use="required">
             <xs:annotation>
                 <xs:documentation>
                     Material-ID acc. to the Definition of the exporting Program
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="Desc" type="xs:string">
+        <xs:attribute name="Desc" type="xs:string" use="required">
             <xs:annotation>
                 <xs:documentation>
                     Descriptive Name of the Definition as a Fallback-Value for the user to choose the correct Material on import
@@ -57,14 +86,14 @@
                 Standard Definition
             </xs:documentation>
         </xs:annotation>        
-        <xs:attribute name="StandardID" type="xs:string">
+        <xs:attribute name="StandardID" type="xs:string" use="required">
             <xs:annotation>
                 <xs:documentation>
                     Standard-ID acc. to the Definition of the exporting Program
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="Desc" type="xs:string">
+        <xs:attribute name="Desc" type="xs:string" use="required">
             <xs:annotation>
                 <xs:documentation>
                     Descriptive Name of the Definition as a Fallback-Value for the user to choose the correct Standard on import
@@ -95,14 +124,14 @@
                 </xs:annotation>
             </xs:element>
         </xs:sequence>
-        <xs:attribute name="ComponentId" type="guid">
+        <xs:attribute name="ComponentId" type="guid" use="required">
             <xs:annotation>
                 <xs:documentation>
                     Unique Id of the Component
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="Desc" type="xs:string">
+        <xs:attribute name="Desc" type="xs:string" use="required">
             <xs:annotation>
                 <xs:documentation>
                     Description of the Component
@@ -142,7 +171,7 @@
         <xs:complexContent>
             <xs:extension base="Component">
                 <xs:sequence>
-                  <xs:element name="C_Mill_Standard" type="StandardDef" maxOccurs="1" minOccurs="1">
+                  <xs:element name="C_Mill_Standard" type="StandardDef" maxOccurs="1">
                     <xs:annotation>
                       <xs:documentation>
                         Definition of Components Mill-Tolerance Standard
@@ -150,21 +179,21 @@
                    </xs:annotation>
                   </xs:element>
                 </xs:sequence>
-                <xs:attribute name="S" type="xs:decimal">
+                <xs:attribute name="S" type="xs:decimal" use="required">
                     <xs:annotation>
                         <xs:documentation>
                             Wall-Thickness
                         </xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
-                <xs:attribute name="Dimension" type="xs:string">
+                <xs:attribute name="Dimension" type="xs:string" use="required">
                     <xs:annotation>
                         <xs:documentation>
                             Pipe dimension Name for identification
                         </xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
-                <xs:attribute name="Do" type="xs:decimal">
+                <xs:attribute name="Do" type="xs:decimal" use="required">
                     <xs:annotation>
                         <xs:documentation>
                             Outside-Diameter
@@ -178,21 +207,21 @@
                         </xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
-                <xs:attribute name="C_Mill" type="xs:decimal">
+                <xs:attribute name="C_Mill" type="xs:decimal" use="required">
                     <xs:annotation>
                         <xs:documentation>
                             Mill-Tolerance value
                         </xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
-                <xs:attribute name="C_Mill_Percent" type="xs:integer">
+                <xs:attribute name="C_Mill_Percent" type="xs:integer" use="required">
                     <xs:annotation>
                         <xs:documentation>
                             Switch if C_Mill was calculated from %
                         </xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
-                <xs:attribute name="C_Allowance" type="xs:decimal">
+                <xs:attribute name="C_Allowance" type="xs:decimal" use="required">
                     <xs:annotation>
                         <xs:documentation>
                             Add. allowance
@@ -225,7 +254,7 @@
                         </xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
-                <xs:attribute name="Radius" type="xs:decimal">
+                <xs:attribute name="Radius" type="xs:decimal" use="required">
                     <xs:annotation>
                         <xs:documentation>
                             Bending radius
@@ -245,7 +274,7 @@
         <xs:complexContent>
             <xs:extension base="Component">
                 <xs:sequence>
-                    <xs:element name="MaterialPad" type="Material" maxOccurs="1" minOccurs="1">
+                    <xs:element name="MaterialPad" type="Material" maxOccurs="1">
                         <xs:annotation>
                             <xs:documentation>
                                 Material of reinforcement-pad
@@ -267,21 +296,21 @@
                         </xs:annotation>
                     </xs:element>
                 </xs:sequence>
-                <xs:attribute name="Reinf" type="xs:integer">
+                <xs:attribute name="Reinf" type="xs:integer" use="required">
                     <xs:annotation>
                         <xs:documentation>
                             Switch if component has reinforcement pad
                         </xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
-                <xs:attribute name="InternalProj" type="xs:decimal">
+                <xs:attribute name="InternalProj" type="xs:decimal" use="required">
                     <xs:annotation>
                         <xs:documentation>
                             Internal projection
                         </xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
-                <xs:attribute name="Extruded" type="xs:integer">
+                <xs:attribute name="Extruded" type="xs:integer" use="required">
                     <xs:annotation>
                         <xs:documentation>
                             Switch if Tee is extruded
@@ -384,6 +413,23 @@
             </xs:element>
         </xs:sequence>
     </xs:complexType>
+	
+	<xs:complexType name="Loadcases">
+        <xs:annotation>
+            <xs:documentation>
+                Container-Element for Loadcases
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="LC" type="LC" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>
+                        List of Loadcases
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
 
     <xs:complexType name="PipeClassData">
         <xs:annotation>
@@ -396,6 +442,13 @@
                 <xs:annotation>
                     <xs:documentation>
                         List of Components of this Pipe-Class
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Loadcases" type="Loadcases">
+                <xs:annotation>
+                    <xs:documentation>
+                        List of Loadcases of this Pipe-Class
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
