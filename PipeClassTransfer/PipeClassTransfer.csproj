@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Bend.cs" />
     <Compile Include="Component.cs" />
+    <Compile Include="LoadcaseData.cs" />
     <Compile Include="Material.cs" />
     <Compile Include="Pipe.cs" />
     <Compile Include="PipeClassData.cs" />
