@@ -41,6 +41,12 @@ namespace PipeClassTransfer
         public double StrPipeUtil { get; set; }
 
         /// <summary>
+        /// Switch if the Reducer has knuckles
+        /// </summary>
+        [System.Xml.Serialization.XmlAttribute]
+        public int HasKnuckle { get; set; } = 0;
+
+        /// <summary>
         /// Holds the data of the Reducers large connection
         /// </summary>
         public Pipe LargeConnection { get; set; } = new Pipe();
