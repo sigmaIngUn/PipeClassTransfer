@@ -20,7 +20,7 @@ namespace PipeClassTransfer
     /// Contains data for straight pipes
     /// </summary>
     [System.Xml.Serialization.XmlInclude(typeof(Bend))]
-    public class Pipe : Component
+    public class Pipe : Component, IAllowanceTolerance
     {
         /// <summary>
         /// Wall-Thickness
