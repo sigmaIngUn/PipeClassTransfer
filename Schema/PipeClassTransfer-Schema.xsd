@@ -610,14 +610,14 @@
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="Components" type="Components" use="required">
+            <xs:element name="Components" type="Components">
                 <xs:annotation>
                     <xs:documentation>
                         List of Components of this Pipe-Class
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="Loadcases" type="Loadcases" use="required">
+            <xs:element name="Loadcases" type="Loadcases">
                 <xs:annotation>
                     <xs:documentation>
                         List of Loadcases of this Pipe-Class
@@ -641,7 +641,7 @@
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="PipeClassData" type="PipeClassData" maxOccurs="unbounded" use="required">
+            <xs:element name="PipeClassData" type="PipeClassData" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation>
                         List of Pipe-Classes
