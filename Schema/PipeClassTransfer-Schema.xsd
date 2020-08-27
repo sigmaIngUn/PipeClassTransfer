@@ -369,6 +369,19 @@
                         </xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
+				<xs:attribute name="Type">
+                    <xs:annotation>
+                        <xs:documentation>
+                            Type of Bend, Bend = 1, Elbow = 2
+                        </xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:integer">
+                            <xs:minInclusive value="1"  />
+                            <xs:maxInclusive value="2" />
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:attribute>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>

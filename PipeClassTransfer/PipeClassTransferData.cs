@@ -45,6 +45,12 @@ namespace PipeClassTransfer
             Excentric = 2
         }
 
+        public enum TypeOfBend
+        {
+            Bend = 1,
+            Elbow = 2
+        }
+
         /// <summary>
         /// ID of the exporting Programm see https://github.com/sigmaIngUn/PipeClassTransfer/wiki/KnownExporters
         /// </summary>

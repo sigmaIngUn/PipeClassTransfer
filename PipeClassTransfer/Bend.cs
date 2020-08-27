@@ -40,5 +40,11 @@ namespace PipeClassTransfer
         [System.Xml.Serialization.XmlAttribute]
         public double Radius { get; set; }
 
+        /// <summary>
+        /// Type of Bend, <see cref="PipeClassTransferData.TypeOfBend"/>
+        /// </summary>
+        [System.Xml.Serialization.XmlAttribute]
+        public int Type { get; set; } = 1;
+
     }
 }
