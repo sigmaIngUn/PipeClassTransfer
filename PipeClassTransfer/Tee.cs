@@ -76,6 +76,7 @@ namespace PipeClassTransfer
         /// <summary>
         /// Type of the Branch, see dokumentation
         /// </summary>
+        [System.Xml.Serialization.XmlAttribute]
         public int TypeOfBranch { get; set; } = 0;
     }
 }
