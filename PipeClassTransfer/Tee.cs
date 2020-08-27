@@ -72,5 +72,10 @@ namespace PipeClassTransfer
         /// Holds the data of the Tees branch pipe
         /// </summary>
         public Pipe Branch { get; set; } = new Pipe();
+
+        /// <summary>
+        /// Type of the Branch, see dokumentation
+        /// </summary>
+        public int TypeOfBranch { get; set; } = 0;
     }
 }

@@ -51,6 +51,60 @@ namespace PipeClassTransfer
             Elbow = 2
         }
 
+
+        public enum TypeOfTee
+        {
+            //Kombination 0:nicht berücksichtigen   (00)
+            CombinationNotUsed = 0,
+
+            //    5: unverstärkt(xx)
+            Unreinforced = 5,
+
+            //    1: Hauptrohr-Verstärkung(>x)
+            Reinforced_Run = 1,
+
+            //2: Abzweig-Verstärkung(x>)
+            Reinforced_Branch = 2,
+
+            //    4: Abzweig- / Hauptrohr-Verstärkung(>>)
+            Reinforced_Run_Branch = 4,
+
+            //    3: Scheibenförmige Verstärkung(Pa)
+            ReinforcementPad = 3,
+
+            //    6: T-Fitting(TF)
+            T_Fitting = 6,
+
+            //    7: T-Fitting unverstärkt(Typ A)       (TA)
+            T_Fitting_Unreinforced_TypeA = 7,
+
+            //8: T-Fitting verstärkt(Typ B)       (TB)
+            T_Fitting_Reinforced_TypeB = 8,
+
+            //9: Weldolet(We)
+            Weldolet = 9,
+
+            //    11: Hauptrohr-Verstärkung Di fix(ix)
+            Reinforced_Run_Di_Fix = 11,
+
+            //    12: Abzweig-Verstärkung Di fix(xi)
+            Reinforced_Branch_Di_Fix = 12,
+
+            //    14: Abzweig- / Hauptrohr-Verstärkung Di fix(ii)
+            Reinforced_Run_Branch_Di_Fix = 14,
+
+            //    31: Hauptrohr-Verstärkung Dm fix(mx)
+            Reinforced_Run_Dm_Fix = 31,
+
+            //    32: Abzweig-Verstärkung Dm fix(xm)
+            Reinforced_Branch_Dm_Fix = 32,
+
+            //    34: Abzweig- / Hauptrohr-Verstärkung Dm fix(mm
+            Reinforced_Run_Branch_Dm_Fix = 34,
+
+        }
+
+
         /// <summary>
         /// ID of the exporting Programm see https://github.com/sigmaIngUn/PipeClassTransfer/wiki/KnownExporters
         /// </summary>
