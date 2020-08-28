@@ -38,7 +38,7 @@ namespace PipeClassTransfer
         /// <summary>
         /// List of Load cases of this Pipe-Class
         /// </summary>
-        public List<LoadcaseData> Loadcases { get; set; } = new List<LoadcaseData>(){new LoadcaseData()};
+        public List<LoadcaseData> Loadcases { get; set; } = new List<LoadcaseData>();
 
     }
 }
