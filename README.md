@@ -9,6 +9,10 @@ Detailed documentation is found on the [Wiki-Pages](https://github.com/sigmaIngU
 This repository is an effort to enable the transferability of pipe class data between different CAD and calculation solutions.
 It contains a schema for XML files and a sample implementation in C#
 
+## Content
+- XML-Schema under ./Schema/PipeClassTransfer-Schema.xsd
+- C# Reference-Implementation under ./PipeClassTransfer
+
 ## Implementations
 This data model is implemented in the calculation programs ROHR2 and PROBAD of SIGMA Ingenieurgesellschaft mbH.
 
