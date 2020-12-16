@@ -104,6 +104,11 @@ namespace PipeClassTransfer
 
         }
 
+        public enum TypeOfHead
+        {
+            Korbbogenboden = 1,
+            Klöpperboden = 2
+        }
 
         /// <summary>
         /// ID of the exporting Programm see https://github.com/sigmaIngUn/PipeClassTransfer/wiki/KnownExporters
