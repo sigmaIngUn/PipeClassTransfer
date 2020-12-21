@@ -596,6 +596,32 @@
         </xs:complexContent>
     </xs:complexType>
 
+ <xs:complexType name="Blank">
+        <xs:annotation>
+            <xs:documentation>
+                Type to describe input values for Blank, extends Pipe
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="Pipe">
+                <xs:attribute name="DN" type="xs:integer">
+                    <xs:annotation>
+                        <xs:documentation>
+                            Describes the nominal diameter of the Blank
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+				<xs:attribute name="PN" type="xs:integer">
+                    <xs:annotation>
+                        <xs:documentation>
+                            Describes the nominal pressure of the Blank
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+	
     <xs:complexType name="Components">
         <xs:annotation>
             <xs:documentation>

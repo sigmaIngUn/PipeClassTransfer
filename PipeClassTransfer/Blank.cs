@@ -17,15 +17,20 @@
 namespace PipeClassTransfer
 {
     /// <summary>
-    /// Contains data for heads
+    /// Contains data for blanks
     /// </summary>
-    public class Head : Pipe
+    public class Blank : Pipe
     {
         /// <summary>
-        /// Type of Head, <see cref="PipeClassTransferData.TypeOfHead"/>
+        /// Nominal diameter of the blank
         /// </summary>
         [System.Xml.Serialization.XmlAttribute]
-        public int Type { get; set; } = 1;
+        public double DN { get; set; }
+        /// <summary>
+        /// Nominal pressure
+        /// </summary>
+        [System.Xml.Serialization.XmlAttribute]
+        public double PN { get; set; }
 
     }
 }

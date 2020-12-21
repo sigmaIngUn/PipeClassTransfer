@@ -104,7 +104,7 @@ namespace PipeClassTransfer
 
         }
 
-        public enum TypeOfHead
+        public enum TypeOfCaps
         {
             Korbbogenboden = 1,
             Klöpperboden = 2
