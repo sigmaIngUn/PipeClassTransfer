@@ -17,7 +17,7 @@
 namespace PipeClassTransfer
 {
     /// <summary>
-    /// Contains data for Tee-Pices
+    /// Contains data for Reducer
     /// </summary>
     public class Reducer : Component
     {
@@ -56,5 +56,5 @@ namespace PipeClassTransfer
         /// </summary>
         public Pipe SmallConnection { get; set; } = new Pipe();
 
-    }
+     }
 }
