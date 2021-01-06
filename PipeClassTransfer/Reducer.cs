@@ -56,5 +56,5 @@ namespace PipeClassTransfer
         /// </summary>
         public Pipe SmallConnection { get; set; } = new Pipe();
 
-     }
+    }
 }
