@@ -69,11 +69,5 @@ namespace PipeClassTransfer
         /// Mill-Tolerance Standard ID
         /// </summary>
         public StandardDef C_Mill_Standard { get; set; } = new StandardDef();
-
-        /// <summary>
-        /// Angle for Reducers
-        /// </summary>
-        [System.Xml.Serialization.XmlAttribute]
-        public double angle { get; set; }
     }
 }
