@@ -46,5 +46,10 @@ namespace PipeClassTransfer
         [System.Xml.Serialization.XmlAttribute]
         public int Type { get; set; } = 1;
 
+        /// <summary>
+        /// Allowed utilization of straight pipe
+        /// </summary>
+        [System.Xml.Serialization.XmlAttribute]
+        public double StrPipeUtil { get; set; }
     }
 }
