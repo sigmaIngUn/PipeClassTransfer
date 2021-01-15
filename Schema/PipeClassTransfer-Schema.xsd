@@ -382,6 +382,13 @@
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:attribute>
+				<xs:attribute name="StrPipeUtil" type="xs:decimal">
+                    <xs:annotation>
+                        <xs:documentation>
+                            Allowed utilization of straight pipe
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
