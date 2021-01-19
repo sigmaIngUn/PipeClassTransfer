@@ -69,5 +69,11 @@ namespace PipeClassTransfer
         /// Mill-Tolerance Standard ID
         /// </summary>
         public StandardDef C_Mill_Standard { get; set; } = new StandardDef();
+
+        /// <summary>
+        /// Allowed utilization of straight pipe
+        /// </summary>
+        [System.Xml.Serialization.XmlAttribute]
+        public int Section { get; set; } = 1;
     }
 }
