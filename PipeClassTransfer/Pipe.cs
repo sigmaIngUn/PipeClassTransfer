@@ -57,7 +57,7 @@ namespace PipeClassTransfer
         /// Switch if <see cref="C_Mill"/> was calculated from %
         /// </summary>
         [System.Xml.Serialization.XmlAttribute]
-        public int C_Mill_Percent { get; set; }
+        public double C_Mill_Percent { get; set; }
 
         /// <summary>
         /// Add. allowance
@@ -75,5 +75,17 @@ namespace PipeClassTransfer
         /// </summary>
         [System.Xml.Serialization.XmlAttribute]
         public int Section { get; set; } = 1;
+
+        /// <summary>
+        /// Max. allowable Stress in Betrieb
+        /// </summary>
+        [System.Xml.Serialization.XmlAttribute]
+        public double MaxStressBetrieb { get; set; }
+
+        /// <summary>
+        /// Max. allowable Stress in Probe
+        /// </summary>
+        [System.Xml.Serialization.XmlAttribute]
+        public double MaxStressProbe { get; set; }
     }
 }
