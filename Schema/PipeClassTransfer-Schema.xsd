@@ -322,7 +322,7 @@
                         </xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
-                <xs:attribute name="C_Mill_Percent" type="xs:integer" use="required">
+                <xs:attribute name="C_Mill_Percent" type="xs:decimal" use="required">
                     <xs:annotation>
                         <xs:documentation>
                             Switch if C_Mill was calculated from %
@@ -333,6 +333,19 @@
                     <xs:annotation>
                         <xs:documentation>
                             Add. allowance
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+				<xs:attribute name="MaxStressBetrieb" type="xs:decimal" use="required">
+                    <xs:annotation>
+                        <xs:documentation>
+                            Max. allowable Stress in Calculation
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute><xs:attribute name="MaxStressProbe" type="xs:decimal" use="required">
+                    <xs:annotation>
+                        <xs:documentation>
+                            Max. allowable Stress in Test
                         </xs:documentation>
                     </xs:annotation>
                 </xs:attribute>

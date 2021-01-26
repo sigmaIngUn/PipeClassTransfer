@@ -77,13 +77,13 @@ namespace PipeClassTransfer
         public int Section { get; set; } = 1;
 
         /// <summary>
-        /// Max. allowable Stress in Betrieb
+        /// Max. allowable Stress in Calculation
         /// </summary>
         [System.Xml.Serialization.XmlAttribute]
         public double MaxStressBetrieb { get; set; }
 
         /// <summary>
-        /// Max. allowable Stress in Probe
+        /// Max. allowable Stress in Test
         /// </summary>
         [System.Xml.Serialization.XmlAttribute]
         public double MaxStressProbe { get; set; }
