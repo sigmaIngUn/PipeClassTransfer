@@ -40,5 +40,9 @@ namespace PipeClassTransfer
         /// </summary>
         public List<LoadcaseData> Loadcases { get; set; } = new List<LoadcaseData>();
 
+        /// <summary>
+        /// List of custom objects to store additional information
+        /// </summary>
+        public List<object> AdditionalInformation { get; set; } = new List<object>();
     }
 }

@@ -15,6 +15,7 @@
 // along with PipeClassTransfer.  If not, see <http://www.gnu.org/licenses/>.
 
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace PipeClassTransfer
 {
@@ -132,6 +133,8 @@ namespace PipeClassTransfer
         /// List of Pipe-Class datasets
         /// </summary>
         public List<PipeClassData> PipeClasses { get; set; } = new List<PipeClassData>();
+
+        
 
     }
 }

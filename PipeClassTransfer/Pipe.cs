@@ -70,22 +70,7 @@ namespace PipeClassTransfer
         /// </summary>
         public StandardDef C_Mill_Standard { get; set; } = new StandardDef();
 
-        /// <summary>
-        /// Allowed utilization of straight pipe
-        /// </summary>
-        [System.Xml.Serialization.XmlAttribute]
-        public int Section { get; set; } = 1;
-
-        /// <summary>
-        /// Max. allowable Stress in Calculation
-        /// </summary>
-        [System.Xml.Serialization.XmlAttribute]
-        public double MaxStressBetrieb { get; set; }
-
-        /// <summary>
-        /// Max. allowable Stress in Test
-        /// </summary>
-        [System.Xml.Serialization.XmlAttribute]
-        public double MaxStressProbe { get; set; }
+        
+        
     }
 }
