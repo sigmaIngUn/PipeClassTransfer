@@ -14,6 +14,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with PipeClassTransfer.  If not, see <http://www.gnu.org/licenses/>.
 
+using System;
 using System.Collections.Generic;
 
 namespace PipeClassTransfer
@@ -23,6 +24,11 @@ namespace PipeClassTransfer
     /// </summary>
     public class PipeClassData
     {
+        /// <summary>
+        /// Unique Id of this PipeClass
+        /// </summary>
+        [System.Xml.Serialization.XmlAttribute]
+        public Guid PipeClassId { get; set; } = Guid.NewGuid();
 
         /// <summary>
         /// Description of Pipe-Class
@@ -40,9 +46,5 @@ namespace PipeClassTransfer
         /// </summary>
         public List<LoadcaseData> Loadcases { get; set; } = new List<LoadcaseData>();
 
-        /// <summary>
-        /// List of custom objects to store additional information
-        /// </summary>
-        public List<object> AdditionalInformation { get; set; } = new List<object>();
     }
 }
