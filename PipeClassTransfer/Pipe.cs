@@ -49,7 +49,7 @@ namespace PipeClassTransfer
         /// Switch if <see cref="C_Mill"/> was calculated from %
         /// </summary>
         [System.Xml.Serialization.XmlAttribute]
-        public double C_Mill_Percent { get; set; }
+        public int C_Mill_Percent { get; set; }
 
         /// <summary>
         /// Add. allowance

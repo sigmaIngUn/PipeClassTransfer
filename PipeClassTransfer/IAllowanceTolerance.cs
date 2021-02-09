@@ -19,7 +19,7 @@ namespace PipeClassTransfer
         /// <summary>
         /// Switch if <see cref="C_Mill"/> was calculated from %
         /// </summary>
-        double C_Mill_Percent { get; set; }
+        int C_Mill_Percent { get; set; }
 
         /// <summary>
         /// Add. allowance
