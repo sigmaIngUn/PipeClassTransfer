@@ -1,4 +1,4 @@
-﻿// This file Head.cs is part of PipeClassTransfer
+﻿// This file Blank.cs is part of PipeClassTransfer
 // Copyright (C) 2020 SIGMA Ingenieurgesellschaft mbH, Unna, Germany
 // 
 // PipeClassTransfer is free software: you can redistribute it and/or modify
