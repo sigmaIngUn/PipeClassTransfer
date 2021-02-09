@@ -134,7 +134,20 @@ namespace PipeClassTransfer
         /// </summary>
         public List<PipeClassData> PipeClasses { get; set; } = new List<PipeClassData>();
 
-        
+        /// <summary>
+        /// Creates a shallow (references get copied, not cloned) copy of the object
+        /// </summary>
+        /// <returns></returns>
+        public PipeClassTransferData ShallowCopy()
+        {
+            var copy = new PipeClassTransferData()
+            {
+                ExporterID = this.ExporterID,
+                Unit = this.Unit,
+                PipeClasses = this.PipeClasses
+            };
 
+            return copy;
+        }
     }
 }
