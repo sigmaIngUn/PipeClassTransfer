@@ -20,19 +20,11 @@ namespace PipeClassTransfer
     /// Contains data for straight pipes
     /// </summary>
     [System.Xml.Serialization.XmlInclude(typeof(Bend))]
-    public class Pipe : Component, IAllowanceTolerance
+    public class Pipe : Component, IAllowanceTolerance, IWallThickness
     {
-        /// <summary>
-        /// Wall-Thickness
-        /// </summary>
+        /// <inheritdoc />
         [System.Xml.Serialization.XmlAttribute]
         public double S { get; set; }
-
-        /// <summary>
-        /// Pipe dimension name for identification
-        /// </summary>
-        [System.Xml.Serialization.XmlAttribute]
-        public string Dimension { get; set; } = string.Empty;
 
         /// <summary>
         /// Outside-Diameter

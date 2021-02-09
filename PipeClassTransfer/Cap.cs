@@ -17,12 +17,12 @@
 namespace PipeClassTransfer
 {
     /// <summary>
-    /// Contains data for Caps
+    /// Contains data for Cap
     /// </summary>
-    public class Caps : Pipe
+    public class Cap : Pipe
     {
         /// <summary>
-        /// Type of Caps, <see cref="PipeClassTransferData.TypeOfCaps"/>
+        /// Type of Cap, <see cref="PipeClassTransferData.TypeOfCaps"/>
         /// </summary>
         [System.Xml.Serialization.XmlAttribute]
         public int Type { get; set; } = 1;

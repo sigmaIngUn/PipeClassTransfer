@@ -24,7 +24,7 @@ namespace PipeClassTransfer
     [System.Xml.Serialization.XmlInclude(typeof(Pipe))]
     [System.Xml.Serialization.XmlInclude(typeof(Tee))]
     [System.Xml.Serialization.XmlInclude(typeof(Reducer))]
-    [System.Xml.Serialization.XmlInclude(typeof(Caps))]
+    [System.Xml.Serialization.XmlInclude(typeof(Cap))]
     [System.Xml.Serialization.XmlInclude(typeof(Blank))]
     public class Component
     {
@@ -65,6 +65,12 @@ namespace PipeClassTransfer
         public Guid GroupId { get; set; } = Guid.Empty;
 
         /// <summary>
+        /// Dimension name for identification
+        /// </summary>
+        [System.Xml.Serialization.XmlAttribute]
+        public string Dimension { get; set; } = string.Empty;
+
+        /// <summary>
         /// Material ID
         /// </summary>
         public Material Material { get; set; } = new Material();
@@ -73,5 +79,6 @@ namespace PipeClassTransfer
         /// Standard ID
         /// </summary>
         public StandardDef Standard { get; set; } = new StandardDef();
+
     }
 }

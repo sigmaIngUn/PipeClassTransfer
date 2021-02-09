@@ -19,7 +19,7 @@ namespace PipeClassTransfer
     /// <summary>
     /// Contains data for blanks
     /// </summary>
-    public class Blank : Pipe
+    public class Blank : Component, IAllowanceTolerance, IWallThickness
     {
         /// <summary>
         /// Nominal diameter of the blank
@@ -32,5 +32,19 @@ namespace PipeClassTransfer
         [System.Xml.Serialization.XmlAttribute]
         public double PN { get; set; }
 
+        /// <inheritdoc/>
+        [System.Xml.Serialization.XmlAttribute]
+        public double C_Mill { get; set; }
+        /// <inheritdoc/>
+        [System.Xml.Serialization.XmlAttribute]
+        public double C_Mill_Percent { get; set; }
+        /// <inheritdoc/>
+        [System.Xml.Serialization.XmlAttribute]
+        public double C_Allowance { get; set; }
+        /// <inheritdoc/>
+        public StandardDef C_Mill_Standard { get; set; }
+        /// <inheritdoc/>
+        [System.Xml.Serialization.XmlAttribute]
+        public double S { get; set; }
     }
 }

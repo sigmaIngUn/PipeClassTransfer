@@ -25,7 +25,7 @@
             </xs:documentation>
         </xs:annotation>
         <xs:restriction base="xs:string">
-            <xs:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+            <xs:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}"/>
         </xs:restriction>
     </xs:simpleType>
     
@@ -232,7 +232,7 @@
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="CalcBase" type="CalculationBase"  use="required">
+        <xs:attribute name="CalcBase" type="CalculationBase" use="required">
             <xs:annotation>
                 <xs:documentation>
                     The calculation Standard used for the analysis of this component
@@ -267,6 +267,13 @@
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
+		<xs:attribute name="Dimension" type="xs:string" use="required">
+            <xs:annotation>
+                <xs:documentation>
+                    Dimension name for identification
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
     </xs:complexType>
 
 
@@ -291,13 +298,6 @@
                     <xs:annotation>
                         <xs:documentation>
                             Wall-Thickness
-                        </xs:documentation>
-                    </xs:annotation>
-                </xs:attribute>
-                <xs:attribute name="Dimension" type="xs:string" use="required">
-                    <xs:annotation>
-                        <xs:documentation>
-                            Pipe dimension Name for identification
                         </xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
@@ -333,19 +333,6 @@
                     <xs:annotation>
                         <xs:documentation>
                             Add. allowance
-                        </xs:documentation>
-                    </xs:annotation>
-                </xs:attribute>
-				<xs:attribute name="MaxStressBetrieb" type="xs:decimal" use="required">
-                    <xs:annotation>
-                        <xs:documentation>
-                            Max. allowable Stress in Calculation
-                        </xs:documentation>
-                    </xs:annotation>
-                </xs:attribute><xs:attribute name="MaxStressProbe" type="xs:decimal" use="required">
-                    <xs:annotation>
-                        <xs:documentation>
-                            Max. allowable Stress in Test
                         </xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
@@ -390,8 +377,8 @@
                     </xs:annotation>
                     <xs:simpleType>
                         <xs:restriction base="xs:integer">
-                            <xs:minInclusive value="1"  />
-                            <xs:maxInclusive value="2" />
+                            <xs:minInclusive value="1"/>
+                            <xs:maxInclusive value="2"/>
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:attribute>
@@ -487,22 +474,22 @@
                     </xs:annotation>
                     <xs:simpleType>
                         <xs:restriction base="xs:integer">
-                            <xs:enumeration value="0"  />
-                            <xs:enumeration value="5"  />
-                            <xs:enumeration value="1"  />
-                            <xs:enumeration value="2"  />
-                            <xs:enumeration value="4"  />
-                            <xs:enumeration value="3"  />
-                            <xs:enumeration value="6"  />
-                            <xs:enumeration value="7"  />
-                            <xs:enumeration value="8"  />
-                            <xs:enumeration value="9"  />
-                            <xs:enumeration value="11"  />
-                            <xs:enumeration value="12"  />
-                            <xs:enumeration value="14"  />
-                            <xs:enumeration value="31"  />
-                            <xs:enumeration value="32"  />
-                            <xs:enumeration value="34" />
+                            <xs:enumeration value="0"/>
+                            <xs:enumeration value="5"/>
+                            <xs:enumeration value="1"/>
+                            <xs:enumeration value="2"/>
+                            <xs:enumeration value="4"/>
+                            <xs:enumeration value="3"/>
+                            <xs:enumeration value="6"/>
+                            <xs:enumeration value="7"/>
+                            <xs:enumeration value="8"/>
+                            <xs:enumeration value="9"/>
+                            <xs:enumeration value="11"/>
+                            <xs:enumeration value="12"/>
+                            <xs:enumeration value="14"/>
+                            <xs:enumeration value="31"/>
+                            <xs:enumeration value="32"/>
+                            <xs:enumeration value="34"/>
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:attribute>
@@ -556,8 +543,8 @@
                     </xs:annotation>
                     <xs:simpleType>
                         <xs:restriction base="xs:integer">
-                            <xs:minInclusive value="1"  />
-                            <xs:maxInclusive value="2" />
+                            <xs:minInclusive value="1"/>
+                            <xs:maxInclusive value="2"/>
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:attribute>
@@ -588,8 +575,8 @@
                     </xs:annotation>
                     <xs:simpleType>
                         <xs:restriction base="xs:integer">
-                            <xs:minInclusive value="1"  />
-                            <xs:maxInclusive value="2" />
+                            <xs:minInclusive value="1"/>
+                            <xs:maxInclusive value="2"/>
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:attribute>
@@ -622,19 +609,56 @@
                 Type to describe input values for Blank, extends Pipe
             </xs:documentation>
         </xs:annotation>
-        <xs:complexContent>
-            <xs:extension base="Pipe">
-                <xs:attribute name="DN" type="xs:integer">
+        <xs:complexContent>		
+            <xs:extension base="Component">
+			<xs:sequence>
+                  <xs:element name="C_Mill_Standard" type="StandardDef" maxOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>
+                        Definition of Components Mill-Tolerance Standard
+                      </xs:documentation>
+                   </xs:annotation>
+                  </xs:element>
+                </xs:sequence>
+                <xs:attribute name="DN" type="xs:decimal">
                     <xs:annotation>
                         <xs:documentation>
-                            Describes the nominal diameter of the Blank
+                            The nominal diameter of the Blank
                         </xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
-				<xs:attribute name="PN" type="xs:integer">
+				<xs:attribute name="PN" type="xs:decimal">
                     <xs:annotation>
                         <xs:documentation>
-                            Describes the nominal pressure of the Blank
+                            The nominal pressure of the Blank
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+				<xs:attribute name="C_Mill" type="xs:decimal" use="required">
+                    <xs:annotation>
+                        <xs:documentation>
+                            Mill-Tolerance value
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+                <xs:attribute name="C_Mill_Percent" type="xs:decimal" use="required">
+                    <xs:annotation>
+                        <xs:documentation>
+                            Switch if C_Mill was calculated from %
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+                <xs:attribute name="C_Allowance" type="xs:decimal" use="required">
+                    <xs:annotation>
+                        <xs:documentation>
+                            Add. allowance
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+				<xs:attribute name="S" type="xs:decimal" use="required">
+                    <xs:annotation>
+                        <xs:documentation>
+                            Wall-Thickness
                         </xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
@@ -698,6 +722,13 @@
                 </xs:annotation>
             </xs:element>
         </xs:sequence>
+		<xs:attribute name="PipeClassId" type="guid" use="required">
+            <xs:annotation>
+                <xs:documentation>
+                    Unique Id of this PipeClass
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
         <xs:attribute name="Description" type="xs:string">
             <xs:annotation>
                 <xs:documentation>
@@ -765,7 +796,7 @@
         <xs:attribute name="ExporterID" type="xs:string" use="required">
             <xs:annotation>
                 <xs:documentation>
-                    ID of the exporting Programm see https://github.com/sigmaIngUn/PipeClassTransfer/wiki/KnownExporters />
+                    ID of the exporting Programm see https://github.com/sigmaIngUn/PipeClassTransfer/wiki/KnownExporters /&gt;
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
