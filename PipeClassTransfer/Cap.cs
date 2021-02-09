@@ -19,7 +19,7 @@ namespace PipeClassTransfer
     /// <summary>
     /// Contains data for Cap
     /// </summary>
-    public class Cap : Pipe
+    public class Cap : Component, IAllowanceTolerance, IWallThickness
     {
         /// <summary>
         /// Type of Cap, <see cref="PipeClassTransferData.TypeOfCaps"/>
@@ -27,5 +27,24 @@ namespace PipeClassTransfer
         [System.Xml.Serialization.XmlAttribute]
         public int Type { get; set; } = 1;
 
+        /// <inheritdoc/>
+        [System.Xml.Serialization.XmlAttribute]
+        public double C_Mill { get; set; }
+        /// <inheritdoc/>
+        [System.Xml.Serialization.XmlAttribute]
+        public double C_Mill_Percent { get; set; }
+        /// <inheritdoc/>
+        [System.Xml.Serialization.XmlAttribute]
+        public double C_Allowance { get; set; }
+        /// <inheritdoc/>
+        public StandardDef C_Mill_Standard { get; set; }
+        /// <inheritdoc/>
+        [System.Xml.Serialization.XmlAttribute]
+        public double S { get; set; }
+        /// <summary>
+        /// The outer diameter of the Cap
+        /// </summary>
+        [System.Xml.Serialization.XmlAttribute]
+        public double Do { get; set; }
     }
 }

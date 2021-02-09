@@ -567,6 +567,50 @@
         </xs:annotation>
         <xs:complexContent>
             <xs:extension base="Component">
+			<xs:sequence>
+                  <xs:element name="C_Mill_Standard" type="StandardDef" maxOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>
+                        Definition of Components Mill-Tolerance Standard
+                      </xs:documentation>
+                   </xs:annotation>
+                  </xs:element>
+                </xs:sequence>
+				<xs:attribute name="C_Mill" type="xs:decimal" use="required">
+                    <xs:annotation>
+                        <xs:documentation>
+                            Mill-Tolerance value
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+                <xs:attribute name="C_Mill_Percent" type="xs:decimal" use="required">
+                    <xs:annotation>
+                        <xs:documentation>
+                            Switch if C_Mill was calculated from %
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+                <xs:attribute name="C_Allowance" type="xs:decimal" use="required">
+                    <xs:annotation>
+                        <xs:documentation>
+                            Add. allowance
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+				<xs:attribute name="S" type="xs:decimal" use="required">
+                    <xs:annotation>
+                        <xs:documentation>
+                            Wall-Thickness
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+				<xs:attribute name="Do" type="xs:decimal" use="required">
+                    <xs:annotation>
+                        <xs:documentation>
+                            The outer diameter of the Cap
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
                 <xs:attribute name="Type">
                     <xs:annotation>
                         <xs:documentation>
