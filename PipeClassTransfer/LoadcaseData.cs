@@ -42,6 +42,12 @@ namespace PipeClassTransfer
         public double Pressure { get; set; }
 
         /// <summary>
+        /// Calculated maximum pressure of this Load case
+        /// </summary>
+        [System.Xml.Serialization.XmlAttribute]
+        public double CalcPressure { get; set; }
+
+        /// <summary>
         /// Testpressure of this Load case
         /// </summary>
         [System.Xml.Serialization.XmlAttribute]
