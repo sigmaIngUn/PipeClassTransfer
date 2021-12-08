@@ -150,13 +150,6 @@
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
-		<xs:attribute name="TestPressure" type="xs:decimal" use="required">
-            <xs:annotation>
-                <xs:documentation>
-                    TestPressure of this Loadcase
-                </xs:documentation>
-            </xs:annotation>
-        </xs:attribute>
         <xs:attribute name="Desc" type="xs:string">
             <xs:annotation>
                 <xs:documentation>
