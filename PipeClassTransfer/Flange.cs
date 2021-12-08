@@ -1,4 +1,4 @@
-﻿// This file Flange.cs is part of PipeClassTransfer
+﻿// This file Blank.cs is part of PipeClassTransfer
 // Copyright (C) 2020 SIGMA Ingenieurgesellschaft mbH, Unna, Germany
 // 
 // PipeClassTransfer is free software: you can redistribute it and/or modify
@@ -22,7 +22,7 @@ namespace PipeClassTransfer
     public class Flange : Component, IAllowanceTolerance, IWallThickness
     {
         /// <summary>
-        /// Nominal diameter of the Flange
+        /// Nominal diameter of the blank
         /// </summary>
         [System.Xml.Serialization.XmlAttribute]
         public double DN { get; set; }
@@ -31,34 +31,19 @@ namespace PipeClassTransfer
         /// </summary>
         [System.Xml.Serialization.XmlAttribute]
         public double PN { get; set; }
-        /// <summary>
-        /// Type of flange
-        /// </summary>
-        [System.Xml.Serialization.XmlAttribute]
-        public int TypeOfFlange { get; set; }
-        /// <summary>
-        /// Mill-Tolerance value
-        /// </summary>
+
+        /// <inheritdoc/>
         [System.Xml.Serialization.XmlAttribute]
         public double C_Mill { get; set; }
-        /// <summary>
-        /// Switch if <see cref="C_Mill"/> was calculated from %
-        /// </summary>
+        /// <inheritdoc/>
         [System.Xml.Serialization.XmlAttribute]
         public int C_Mill_Percent { get; set; }
-
-        /// <summary>
-        /// Add. allowance
-        /// </summary>
+        /// <inheritdoc/>
         [System.Xml.Serialization.XmlAttribute]
         public double C_Allowance { get; set; }
-        /// <summary>
-        /// Mill-Tolerance Standard ID
-        /// </summary>
+        /// <inheritdoc/>
         public StandardDef C_Mill_Standard { get; set; }
-        /// <summary>
-        /// Wallthickness of the flange
-        /// </summary>
+        /// <inheritdoc/>
         [System.Xml.Serialization.XmlAttribute]
         public double S { get; set; }
     }
