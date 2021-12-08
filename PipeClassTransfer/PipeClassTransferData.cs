@@ -40,12 +40,6 @@ namespace PipeClassTransfer
             US
         }
 
-        public enum Language
-        {
-            German = 1,
-            English = 2
-        }
-
         public enum TypeOfReducer
         {
             Concentric = 1,
@@ -155,11 +149,5 @@ namespace PipeClassTransfer
 
             return copy;
         }
-
-        /// <summary>
-        /// Report´s language
-        /// </summary>
-        [System.Xml.Serialization.XmlAttribute]
-        public Language LanguageOfReport { get; set; }
     }
 }
