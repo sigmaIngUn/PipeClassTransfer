@@ -40,7 +40,7 @@ namespace PipeClassTransfer
         /// <summary>
         /// Add. inner allowance
         /// </summary>
-        double C_Allowance_Inner { get; set; }
+        double C_Allowance { get; set; }
 
         /// <summary>
         /// Add. outer allowance

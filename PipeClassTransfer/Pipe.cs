@@ -55,7 +55,7 @@ namespace PipeClassTransfer
         /// Add. inner allowance
         /// </summary>
         [System.Xml.Serialization.XmlAttribute]
-        public double C_Allowance_Inner { get; set; }
+        public double C_Allowance { get; set; }
 
         /// <summary>
         /// Add. outer allowance
