@@ -33,9 +33,17 @@ namespace PipeClassTransfer
         /// <inheritdoc/>
         [System.Xml.Serialization.XmlAttribute]
         public int C_Mill_Percent { get; set; }
-        /// <inheritdoc/>
+        /// <summary>
+        /// Add. inner allowance
+        /// </summary>
         [System.Xml.Serialization.XmlAttribute]
-        public double C_Allowance { get; set; }
+        public double C_Allowance_Inner { get; set; }
+
+        /// <summary>
+        /// Add. outer allowance
+        /// </summary>
+        [System.Xml.Serialization.XmlAttribute]
+        public double C_Allowance_Outer { get; set; }
         /// <inheritdoc/>
         public StandardDef C_Mill_Standard { get; set; }
         /// <inheritdoc/>

@@ -38,9 +38,14 @@ namespace PipeClassTransfer
         int C_Mill_Percent { get; set; }
 
         /// <summary>
-        /// Add. allowance
+        /// Add. inner allowance
         /// </summary>
-        double C_Allowance { get; set; }
+        double C_Allowance_Inner { get; set; }
+
+        /// <summary>
+        /// Add. outer allowance
+        /// </summary>
+        double C_Allowance_Outer { get; set; }
 
         /// <summary>
         /// Mill-Tolerance Standard ID
