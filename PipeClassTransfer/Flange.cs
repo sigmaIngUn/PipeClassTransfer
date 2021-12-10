@@ -32,7 +32,7 @@ namespace PipeClassTransfer
         [System.Xml.Serialization.XmlAttribute]
         public double PN { get; set; }
         /// <summary>
-        /// Type of flange
+        /// Type of flange, <see cref="PipeClassTransferData.TypeOfFlanges"/>
         /// </summary>
         [System.Xml.Serialization.XmlAttribute]
         public int TypeOfFlange { get; set; }
