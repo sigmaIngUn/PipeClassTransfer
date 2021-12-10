@@ -26,6 +26,7 @@ namespace PipeClassTransfer
     [System.Xml.Serialization.XmlInclude(typeof(Reducer))]
     [System.Xml.Serialization.XmlInclude(typeof(Cap))]
     [System.Xml.Serialization.XmlInclude(typeof(Blank))]
+    [System.Xml.Serialization.XmlInclude(typeof(Flange))]
     public class Component
     {
         /// <summary>
