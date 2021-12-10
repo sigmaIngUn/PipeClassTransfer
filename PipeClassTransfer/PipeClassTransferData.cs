@@ -105,6 +105,48 @@ namespace PipeClassTransfer
 
         }
 
+        public enum TypeOfFlanges
+        {
+            //      01: Glatter Anschweißflansch
+            Plate_flange_for_welding = 1,
+
+            //      02: Losflansch für Bund/Ring/Bördel
+            Loose_flange_for_collar_ring = 2,
+
+            //      04: Losflansch für Vorschweißbund
+            Loose_flange_or_Weld_neck_collar = 4,
+
+            //      05: Blank flange
+            Blank_Flange = 5,
+
+            //      11: Vorschweißflansch
+            Weld_neck_flange = 11,
+
+            //      12: Überschiebflansch mit Ansatz
+            Hubbed_slip_on_flange = 12,
+
+            //      13: Gewindeflansch mit Ansatz
+            Hubed_threaded_flange = 13,
+
+            //      21: Integralflansch
+            Integral_flange = 21,
+
+            //      32: Glatter Anschweißbund
+            weld_on_late_collar = 32,
+
+            //      34: Vorschweißbund
+            Weld_neck_collar = 34,
+
+            //      35: Vorschweißring
+            Weldring_neck = 35,
+
+            //      36: Pressbördel mit langem Ansatz
+            Pressed_collar_long_neck = 36,
+
+            //      37: Pressbördel
+            Pressed_collar = 37,
+        }
+
         public enum TypeOfCaps
         {
             Korbbogenboden = 1,
