@@ -40,12 +40,6 @@ namespace PipeClassTransfer
         public int C_Mill_Percent { get; set; }
 
         /// <summary>
-        /// Add. inner allowance
-        /// </summary>
-        [System.Xml.Serialization.XmlAttribute]
-        public double C_Allowance { get; set; }
-
-        /// <summary>
         /// Add. outer allowance
         /// </summary>
         [System.Xml.Serialization.XmlAttribute]
