@@ -332,7 +332,14 @@
                 <xs:attribute name="C_Allowance" type="xs:decimal" use="required">
                     <xs:annotation>
                         <xs:documentation>
-                            Add. allowance
+                            Add. inner allowance
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+                <xs:attribute name="C_Allowance_Outer" type="xs:decimal" use="required">
+                    <xs:annotation>
+                        <xs:documentation>
+                            Add. outer allowance
                         </xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
@@ -593,11 +600,18 @@
                 <xs:attribute name="C_Allowance" type="xs:decimal" use="required">
                     <xs:annotation>
                         <xs:documentation>
-                            Add. allowance
+                            Add. inner allowance
                         </xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
-				<xs:attribute name="S" type="xs:decimal" use="required">
+		<xs:attribute name="C_Allowance_Outer" type="xs:decimal" use="required">
+                    <xs:annotation>
+                        <xs:documentation>
+                            Add. outer allowance
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+		<xs:attribute name="S" type="xs:decimal" use="required">
                     <xs:annotation>
                         <xs:documentation>
                             Wall-Thickness
@@ -695,11 +709,18 @@
                 <xs:attribute name="C_Allowance" type="xs:decimal" use="required">
                     <xs:annotation>
                         <xs:documentation>
-                            Add. allowance
+                            Add. inner allowance
                         </xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
-				<xs:attribute name="S" type="xs:decimal" use="required">
+		<xs:attribute name="C_Allowance_Outer" type="xs:decimal" use="required">
+                    <xs:annotation>
+                        <xs:documentation>
+                            Add. outer allowance
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+		<xs:attribute name="S" type="xs:decimal" use="required">
                     <xs:annotation>
                         <xs:documentation>
                             Wall-Thickness
