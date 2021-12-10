@@ -658,6 +658,65 @@
                     </xs:annotation>
                 </xs:attribute>
             </xs:extension>
+ 			<xs:sequence>
+                  <xs:element name="C_Mill_Standard" type="StandardDef" maxOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>
+                        Definition of Components Mill-Tolerance Standard
+                      </xs:documentation>
+                   </xs:annotation>
+                  </xs:element>
+                </xs:sequence>
+                <xs:attribute name="DN" type="xs:decimal">
+                    <xs:annotation>
+                        <xs:documentation>
+                            The nominal diameter of the Flange
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+				<xs:attribute name="PN" type="xs:decimal">
+                    <xs:annotation>
+                        <xs:documentation>
+                            The nominal pressure of the Flange
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+				<xs:attribute name="C_Mill" type="xs:decimal" use="required">
+                    <xs:annotation>
+                        <xs:documentation>
+                            Mill-Tolerance value
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+                <xs:attribute name="C_Mill_Percent" type="xs:integer" use="required">
+                    <xs:annotation>
+                        <xs:documentation>
+                            Switch if C_Mill was calculated from %
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+                <xs:attribute name="C_Allowance" type="xs:decimal" use="required">
+                    <xs:annotation>
+                        <xs:documentation>
+                            Add. inner allowance
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+		<xs:attribute name="C_Allowance_Outer" type="xs:decimal" use="required">
+                    <xs:annotation>
+                        <xs:documentation>
+                            Add. outer allowance
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+		<xs:attribute name="S" type="xs:decimal" use="required">
+                    <xs:annotation>
+                        <xs:documentation>
+                            Wall-Thickness
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+            </xs:extension>
         </xs:complexContent>
     </xs:complexType>
 
