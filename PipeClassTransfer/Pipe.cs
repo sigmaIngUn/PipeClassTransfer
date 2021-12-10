@@ -39,33 +39,23 @@ namespace PipeClassTransfer
         [System.Xml.Serialization.XmlAttribute]
         public string DoNo { get; set; } = string.Empty;
 
-        /// <summary>
-        /// Mill-Tolerance value
-        /// </summary>
+        /// <inheritdoc/>
         [System.Xml.Serialization.XmlAttribute]
         public double C_Mill { get; set; }
 
-        /// <summary>
-        /// Switch if <see cref="C_Mill"/> was calculated from %
-        /// </summary>
+        /// <inheritdoc/>
         [System.Xml.Serialization.XmlAttribute]
         public int C_Mill_Percent { get; set; }
 
-        /// <summary>
-        /// Add. inner allowance
-        /// </summary>
+        /// <inheritdoc/>
         [System.Xml.Serialization.XmlAttribute]
         public double C_Allowance { get; set; }
 
-        /// <summary>
-        /// Add. outer allowance
-        /// </summary>
+        /// <inheritdoc/>
         [System.Xml.Serialization.XmlAttribute]
         public double C_Allowance_Outer { get; set; }
 
-        /// <summary>
-        /// Mill-Tolerance Standard ID
-        /// </summary>
+        /// <inheritdoc/>
         public StandardDef C_Mill_Standard { get; set; } = new StandardDef();
 
         
