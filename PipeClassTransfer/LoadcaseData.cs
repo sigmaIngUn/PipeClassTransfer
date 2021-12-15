@@ -42,6 +42,12 @@ namespace PipeClassTransfer
         public double Pressure { get; set; }
 
         /// <summary>
+        /// Type of Loadcase, <see cref="PipeClassTransferData.TypeOfLoadcase"/>
+        /// </summary>
+        [System.Xml.Serialization.XmlAttribute]
+        public int TypeOfLoadcase { get; set; }
+
+        /// <summary>
         /// Description of the Load case
         /// </summary>
         [System.Xml.Serialization.XmlAttribute]

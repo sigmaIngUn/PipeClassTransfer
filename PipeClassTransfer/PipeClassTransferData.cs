@@ -147,6 +147,14 @@ namespace PipeClassTransfer
             Pressed_collar = 37,
         }
 
+        public enum TypeOfLoadcase
+        {
+            Operation = 0,
+            Test = 1,
+            Montage = 2
+        }
+
+
         public enum TypeOfCaps
         {
             Korbbogenboden = 1,
