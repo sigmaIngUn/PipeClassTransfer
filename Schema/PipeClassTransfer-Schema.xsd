@@ -150,6 +150,12 @@
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
+		<xs:attribute name="TypeOfLoadcase" type="TypeOfLoadcase" use="required">
+            <xs:annotation>
+                <xs:documentation>
+                    Description of the Loadcase
+                </xs:documentation>
+        </xs:attribute>
         <xs:attribute name="Desc" type="xs:string">
             <xs:annotation>
                 <xs:documentation>
@@ -158,6 +164,37 @@
             </xs:annotation>
         </xs:attribute>
     </xs:complexType>
+
+    <xs:simpleType name="TypeOfLoadcase">
+        <xs:annotation>
+            <xs:documentation>
+                Enumeration of used Loadcases
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:integer">
+            <xs:enumeration value="Operation">
+                <xs:annotation>
+                    <xs:documentation>
+                        Loadcase type is an Operation
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="Test">
+                <xs:annotation>
+                    <xs:documentation>
+                        Loadcase type is an Test
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+			<xs:enumeration value="Montage">
+                <xs:annotation>
+                    <xs:documentation>
+                        Loadcase type is an Montage
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
 
     <xs:complexType name="Material">
         <xs:annotation>
