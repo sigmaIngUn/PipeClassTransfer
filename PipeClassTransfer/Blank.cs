@@ -53,5 +53,10 @@ namespace PipeClassTransfer
         /// <inheritdoc/>
         [System.Xml.Serialization.XmlAttribute]
         public double S { get; set; }
+        /// <summary>
+        /// Type of Blank, <see cref="PipeClassTransferData.TypeOfBlank"/>
+        /// </summary>
+        [System.Xml.Serialization.XmlAttribute]
+        public int Type { get; set; } = 1;
     }
 }

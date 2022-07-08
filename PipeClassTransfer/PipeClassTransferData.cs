@@ -162,6 +162,20 @@ namespace PipeClassTransfer
         }
 
         /// <summary>
+        /// Contains different types of blanks
+        /// </summary>
+        public enum TypeOfBlank
+        {
+            TongueAndGroove = 0,
+            FlatGasketArea = 1,
+            SealingBar = 2,
+            Tongue = 3,
+            Groove = 4,
+            Recess = 6
+        }
+        
+
+        /// <summary>
         /// ID of the exporting Programm see https://github.com/sigmaIngUn/PipeClassTransfer/wiki/KnownExporters
         /// </summary>
         [System.Xml.Serialization.XmlAttribute]
