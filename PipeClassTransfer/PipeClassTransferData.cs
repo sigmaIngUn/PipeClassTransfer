@@ -34,25 +34,36 @@ namespace PipeClassTransfer
             this.FileVersion = PipeClassTransferData.CurrentFileVersion;
         }
 
+        /// <summary>
+        /// Contains US and SI Units
+        /// </summary>
         public enum UnitOfMeasure
         {
             SI,
             US
         }
 
+        /// <summary>
+        /// Contains the different reducer types
+        /// </summary>
         public enum TypeOfReducer
         {
             Concentric = 1,
             Excentric = 2
         }
 
+        /// <summary>
+        /// Contains different bend building types
+        /// </summary>
         public enum TypeOfBend
         {
             Bend = 1,
             Elbow = 2
         }
 
-
+        /// <summary>
+        /// Contains different tee and branch types
+        /// </summary>
         public enum TypeOfTee
         {
             //Kombination 0:nicht berücksichtigen   (00)
@@ -79,10 +90,10 @@ namespace PipeClassTransfer
             //    7: T-Fitting unverstärkt(Typ A)       (TA)
             T_Fitting_Unreinforced_TypeA = 7,
 
-            //8: T-Fitting verstärkt(Typ B)       (TB)
+            //    8: T-Fitting verstärkt(Typ B)       (TB)
             T_Fitting_Reinforced_TypeB = 8,
 
-            //9: Weldolet(We)
+            //    9: Weldolet(We)
             Weldolet = 9,
 
             //    11: Hauptrohr-Verstärkung Di fix(ix)
@@ -105,6 +116,9 @@ namespace PipeClassTransfer
 
         }
 
+        /// <summary>
+        /// Contains some flange types
+        /// </summary>
         public enum TypeOfFlanges
         {
             //      01: Glatter Anschweißflansch
@@ -147,6 +161,9 @@ namespace PipeClassTransfer
             Pressed_collar = 37,
         }
 
+        /// <summary>
+        /// Contains different loadcase types, in which one the pipeclass can be calculated
+        /// </summary>
         public enum TypeOfLoadcase
         {
             Operation = 0,
@@ -154,11 +171,13 @@ namespace PipeClassTransfer
             Montage = 2
         }
 
-
+        /// <summary>
+        /// Contains the different types of caps
+        /// </summary>
         public enum TypeOfCaps
         {
             Korbbogenboden = 1,
-            Klöpperboden = 2
+            Kloepperboden = 2
         }
 
         /// <summary>
