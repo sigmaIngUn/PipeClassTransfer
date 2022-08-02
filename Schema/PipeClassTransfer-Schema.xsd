@@ -150,11 +150,12 @@
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
-		<xs:attribute name="TypeOfLoadcase" type="integer" use="required">
+		<xs:attribute name="TypeOfLoadcase" type="xs:integer" use="required">
             <xs:annotation>
                 <xs:documentation>
                     Type of the Loadcase
                 </xs:documentation>
+			</xs:annotation>
         </xs:attribute>
         <xs:attribute name="Desc" type="xs:string">
             <xs:annotation>
@@ -165,28 +166,28 @@
         </xs:attribute>
     </xs:complexType>
 
-    <xs:simpleType name="TypeOfLoadcase">
+    <xs:complexType name="TypeOfLoadcase">
         <xs:annotation>
             <xs:documentation>
                 Enumeration of used Loadcases
             </xs:documentation>
         </xs:annotation>
         <xs:restriction base="xs:integer">
-            <xs:enumeration value="Operation">
+            <xs:enumeration name="Operation">
                 <xs:annotation>
                     <xs:documentation>
                         Loadcase type is an Operation
                     </xs:documentation>
                 </xs:annotation>
             </xs:enumeration>
-            <xs:enumeration value="Test">
+            <xs:enumeration name="Test">
                 <xs:annotation>
                     <xs:documentation>
                         Loadcase type is an Test
                     </xs:documentation>
                 </xs:annotation>
             </xs:enumeration>
-			<xs:enumeration value="Montage">
+			<xs:enumeration name="Montage">
                 <xs:annotation>
                     <xs:documentation>
                         Loadcase type is an Montage
@@ -194,7 +195,7 @@
                 </xs:annotation>
             </xs:enumeration>
         </xs:restriction>
-    </xs:simpleType>
+    </xs:complexType>
 
     <xs:complexType name="Material">
         <xs:annotation>
@@ -313,7 +314,6 @@
         </xs:attribute>
     </xs:complexType>
 
-
     <xs:complexType name="Pipe">
         <xs:annotation>
             <xs:documentation>
@@ -323,64 +323,64 @@
         <xs:complexContent>
             <xs:extension base="Component">
                 <xs:sequence>
-                  <xs:element name="C_Mill_Standard" type="StandardDef" maxOccurs="1">
-                    <xs:annotation>
-                      <xs:documentation>
-                        Definition of Components Mill-Tolerance Standard
-                      </xs:documentation>
-                   </xs:annotation>
-                  </xs:element>
+				  <xs:element name="C_Mill_Standard" type="StandardDef" maxOccurs="1">
+					<xs:annotation>
+					  <xs:documentation>
+						Definition of Components Mill-Tolerance Standard
+					  </xs:documentation>
+				   </xs:annotation>
+				  </xs:element>
                 </xs:sequence>
-                <xs:attribute name="S" type="xs:decimal" use="required">
-                    <xs:annotation>
-                        <xs:documentation>
-                            Wall-Thickness
-                        </xs:documentation>
-                    </xs:annotation>
-                </xs:attribute>
-                <xs:attribute name="Do" type="xs:decimal" use="required">
-                    <xs:annotation>
-                        <xs:documentation>
-                            Outside-Diameter
-                        </xs:documentation>
-                    </xs:annotation>
-                </xs:attribute>
-                <xs:attribute name="DoNo" type="xs:string">
-                    <xs:annotation>
-                        <xs:documentation>
-                            Outer-diameter standard row or bending radius standard row.
-                        </xs:documentation>
-                    </xs:annotation>
-                </xs:attribute>
-                <xs:attribute name="C_Mill" type="xs:decimal" use="required">
-                    <xs:annotation>
-                        <xs:documentation>
-                            Mill-Tolerance value
-                        </xs:documentation>
-                    </xs:annotation>
-                </xs:attribute>
-                <xs:attribute name="C_Mill_Percent" type="xs:integer" use="required">
-                    <xs:annotation>
-                        <xs:documentation>
-                            Switch if C_Mill was calculated from %
-                        </xs:documentation>
-                    </xs:annotation>
-                </xs:attribute>
-                <xs:attribute name="C_Allowance" type="xs:decimal" use="required">
-                    <xs:annotation>
-                        <xs:documentation>
-                            Add. inner allowance
-                        </xs:documentation>
-                    </xs:annotation>
-                </xs:attribute>
-                <xs:attribute name="C_Allowance_Outer" type="xs:decimal" use="required">
-                    <xs:annotation>
-                        <xs:documentation>
-                            Add. outer allowance
-                        </xs:documentation>
-                    </xs:annotation>
-                </xs:attribute>
-            </xs:extension>
+				<xs:attribute name="S" type="xs:decimal" use="required">
+					<xs:annotation>
+						<xs:documentation>
+							Wall-Thickness
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="Do" type="xs:decimal" use="required">
+					<xs:annotation>
+						<xs:documentation>
+							Outside-Diameter
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="DoNo" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>
+							Outer-diameter standard row or bending radius standard row.
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="C_Mill" type="xs:decimal" use="required">
+					<xs:annotation>
+						<xs:documentation>
+							Mill-Tolerance value
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="C_Mill_Percent" type="xs:integer" use="required">
+					<xs:annotation>
+						<xs:documentation>
+							Switch if C_Mill was calculated from %
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="C_Allowance" type="xs:decimal" use="required">
+					<xs:annotation>
+						<xs:documentation>
+							Add. inner allowance
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="C_Allowance_Outer" type="xs:decimal" use="required">
+					<xs:annotation>
+						<xs:documentation>
+							Add. outer allowance
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
         </xs:complexContent>
     </xs:complexType>
 
@@ -413,7 +413,7 @@
                         </xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
-				<xs:attribute name="Type" type="TypeOfBend">
+				<xs:attribute name="Type" type="xs:integer">
                     <xs:annotation>
                         <xs:documentation>
                             Type of Bend
@@ -528,7 +528,7 @@
                         </xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
-				<xs:attribute name="TypeOfBranch" type="TypeOfTee">
+				<xs:attribute name="TypeOfBranch" type="xs:integer">
                     <xs:annotation>
                         <xs:documentation>
                             Type of the Branch, see dokumentation
@@ -699,7 +699,7 @@
                         </xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
-                <xs:attribute name="Type" type="TypeOfReducer">
+                <xs:attribute name="Type" type="xs:integer">
                     <xs:annotation>
                         <xs:documentation>
                             Type of reducer
@@ -800,7 +800,7 @@
                         </xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
-                <xs:attribute name="Type" type="TypeOfCaps">
+                <xs:attribute name="Type" type="xs:integer">
                     <xs:annotation>
                         <xs:documentation>
                             Type of cap
@@ -843,73 +843,72 @@
         </xs:annotation>
         <xs:complexContent>
             <xs:extension base="Component">
-				<xs:attribute name="TypeOfFlange" type="TypeOfFlange">
-                    <xs:annotation>
-                        <xs:documentation>
-                            Type of flange, see documentation
-                        </xs:documentation>
-                    </xs:annotation>
-                </xs:attribute>
-            </xs:extension>
- 			<xs:sequence>
-                  <xs:element name="C_Mill_Standard" type="StandardDef" maxOccurs="1">
-                    <xs:annotation>
-                      <xs:documentation>
-                        Definition of Components Mill-Tolerance Standard
-                      </xs:documentation>
-                   </xs:annotation>
-                  </xs:element>
-                </xs:sequence>
-                <xs:attribute name="DN" type="xs:decimal">
-                    <xs:annotation>
-                        <xs:documentation>
-                            The nominal diameter of the Flange
-                        </xs:documentation>
-                    </xs:annotation>
-                </xs:attribute>
+				<xs:sequence>
+				  <xs:element name="C_Mill_Standard" type="StandardDef" maxOccurs="1">
+					<xs:annotation>
+					  <xs:documentation>
+						Definition of Components Mill-Tolerance Standard
+					  </xs:documentation>
+				   </xs:annotation>
+				  </xs:element>
+				</xs:sequence>
+				<xs:attribute name="TypeOfFlange" type="xs:integer">
+					<xs:annotation>
+						<xs:documentation>
+							Type of flange, see documentation
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="DN" type="xs:decimal">
+					<xs:annotation>
+						<xs:documentation>
+							The nominal diameter of the Flange
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
 				<xs:attribute name="PN" type="xs:decimal">
-                    <xs:annotation>
-                        <xs:documentation>
-                            The nominal pressure of the Flange
-                        </xs:documentation>
-                    </xs:annotation>
-                </xs:attribute>
+					<xs:annotation>
+						<xs:documentation>
+							The nominal pressure of the Flange
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
 				<xs:attribute name="C_Mill" type="xs:decimal" use="required">
-                    <xs:annotation>
-                        <xs:documentation>
-                            Mill-Tolerance value
-                        </xs:documentation>
-                    </xs:annotation>
-                </xs:attribute>
-                <xs:attribute name="C_Mill_Percent" type="xs:integer" use="required">
-                    <xs:annotation>
-                        <xs:documentation>
-                            Switch if C_Mill was calculated from %
-                        </xs:documentation>
-                    </xs:annotation>
-                </xs:attribute>
-                <xs:attribute name="C_Allowance" type="xs:decimal" use="required">
-                    <xs:annotation>
-                        <xs:documentation>
-                            Add. inner allowance
-                        </xs:documentation>
-                    </xs:annotation>
-                </xs:attribute>
+					<xs:annotation>
+						<xs:documentation>
+							Mill-Tolerance value
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="C_Mill_Percent" type="xs:integer" use="required">
+					<xs:annotation>
+						<xs:documentation>
+							Switch if C_Mill was calculated from %
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="C_Allowance" type="xs:decimal" use="required">
+					<xs:annotation>
+						<xs:documentation>
+							Add. inner allowance
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
 				<xs:attribute name="C_Allowance_Outer" type="xs:decimal" use="required">
-                    <xs:annotation>
-                        <xs:documentation>
-                            Add. outer allowance
-                        </xs:documentation>
-                    </xs:annotation>
-                </xs:attribute>
+					<xs:annotation>
+						<xs:documentation>
+							Add. outer allowance
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
 				<xs:attribute name="S" type="xs:decimal" use="required">
-                    <xs:annotation>
-                        <xs:documentation>
-                            Wall-Thickness
-                        </xs:documentation>
-                    </xs:annotation>
-                </xs:attribute>
-            </xs:extension>
+					<xs:annotation>
+						<xs:documentation>
+							Wall-Thickness
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
         </xs:complexContent>
     </xs:complexType>
 
@@ -948,7 +947,7 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:enumeration>
-            <xs:enumeration name="Weld_neck_flange" name="11">
+            <xs:enumeration name="Weld_neck_flange" value="11">
                 <xs:annotation>
                     <xs:documentation>
                         Construction type Weld neck flange
@@ -1017,12 +1016,12 @@
 	<xs:complexType name="Blank">
         <xs:annotation>
             <xs:documentation>
-                Type to describe input values for Blank, extends Pipe
+                Type to describe input values for Blank, extends Component
             </xs:documentation>
         </xs:annotation>
         <xs:complexContent>		
             <xs:extension base="Component">
-			<xs:sequence>
+				<xs:sequence>
                   <xs:element name="C_Mill_Standard" type="StandardDef" maxOccurs="1">
                     <xs:annotation>
                       <xs:documentation>
@@ -1031,63 +1030,63 @@
                    </xs:annotation>
                   </xs:element>
                 </xs:sequence>
-                <xs:attribute name="DN" type="xs:decimal">
-                    <xs:annotation>
-                        <xs:documentation>
-                            The nominal diameter of the Blank
-                        </xs:documentation>
-                    </xs:annotation>
-                </xs:attribute>
+				<xs:attribute name="DN" type="xs:decimal">
+					<xs:annotation>
+						<xs:documentation>
+							The nominal diameter of the Blank
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
 				<xs:attribute name="PN" type="xs:decimal">
-                    <xs:annotation>
-                        <xs:documentation>
-                            The nominal pressure of the Blank
-                        </xs:documentation>
-                    </xs:annotation>
-                </xs:attribute>
+					<xs:annotation>
+						<xs:documentation>
+							The nominal pressure of the Blank
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
 				<xs:attribute name="C_Mill" type="xs:decimal" use="required">
-                    <xs:annotation>
-                        <xs:documentation>
-                            Mill-Tolerance value
-                        </xs:documentation>
-                    </xs:annotation>
-                </xs:attribute>
-                <xs:attribute name="C_Mill_Percent" type="xs:integer" use="required">
-                    <xs:annotation>
-                        <xs:documentation>
-                            Switch if C_Mill was calculated from %
-                        </xs:documentation>
-                    </xs:annotation>
-                </xs:attribute>
-                <xs:attribute name="C_Allowance" type="xs:decimal" use="required">
-                    <xs:annotation>
-                        <xs:documentation>
-                            Add. inner allowance
-                        </xs:documentation>
-                    </xs:annotation>
-                </xs:attribute>
+					<xs:annotation>
+						<xs:documentation>
+							Mill-Tolerance value
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="C_Mill_Percent" type="xs:integer" use="required">
+					<xs:annotation>
+						<xs:documentation>
+							Switch if C_Mill was calculated from %
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="C_Allowance" type="xs:decimal" use="required">
+					<xs:annotation>
+						<xs:documentation>
+							Add. inner allowance
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
 				<xs:attribute name="C_Allowance_Outer" type="xs:decimal" use="required">
-                    <xs:annotation>
-                        <xs:documentation>
-                            Add. outer allowance
-                        </xs:documentation>
-                    </xs:annotation>
-                </xs:attribute>
+					<xs:annotation>
+						<xs:documentation>
+							Add. outer allowance
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
 				<xs:attribute name="S" type="xs:decimal" use="required">
-                    <xs:annotation>
-                        <xs:documentation>
-                            Wall-Thickness
-                        </xs:documentation>
-                    </xs:annotation>
-                </xs:attribute>
-				<xs:attribute name="Type" type="TypeOfBlank" use="required">
-                    <xs:annotation>
-                        <xs:documentation>
-                            Type of Blank
-                        </xs:documentation>
-                    </xs:annotation>
-                </xs:attribute>
-            </xs:extension>
+					<xs:annotation>
+						<xs:documentation>
+							Wall-Thickness
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="Type" type="xs:integer" use="required">
+					<xs:annotation>
+						<xs:documentation>
+							Type of Blank
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
         </xs:complexContent>
 	</xs:complexType>
 	
@@ -1285,13 +1284,6 @@
             </xs:annotation>
         </xs:attribute>
         <xs:attribute name="Unit" type="UnitOfMeasure" use="required">
-            <xs:annotation>
-                <xs:documentation>
-                    The unit of Measure used for Data Input
-                </xs:documentation>
-            </xs:annotation>
-        </xs:attribute>
-		        <xs:attribute name="Unit" type="UnitOfMeasure" use="required">
             <xs:annotation>
                 <xs:documentation>
                     The unit of Measure used for Data Input
