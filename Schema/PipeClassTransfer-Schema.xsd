@@ -150,12 +150,19 @@
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
-		<xs:attribute name="TypeOfLoadcase" type="xs:integer" use="required">
+		<xs:attribute name="TypeOfLoadcase" use="required">
             <xs:annotation>
                 <xs:documentation>
-                    Type of the Loadcase
+                    Type of the Loadcase; 0 = Operation, 1 = Test, 2 = Montage
                 </xs:documentation>
 			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:integer">
+					<xs:enumeration value="0"/>
+					<xs:enumeration value="1"/>
+					<xs:enumeration value="2"/>
+				</xs:restriction>
+			</xs:simpleType>
         </xs:attribute>
         <xs:attribute name="Desc" type="xs:string">
             <xs:annotation>
@@ -164,37 +171,6 @@
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
-    </xs:complexType>
-
-    <xs:complexType name="TypeOfLoadcase">
-        <xs:annotation>
-            <xs:documentation>
-                Enumeration of used Loadcases
-            </xs:documentation>
-        </xs:annotation>
-        <xs:restriction base="xs:integer">
-            <xs:enumeration name="Operation">
-                <xs:annotation>
-                    <xs:documentation>
-                        Loadcase type is an Operation
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration name="Test">
-                <xs:annotation>
-                    <xs:documentation>
-                        Loadcase type is an Test
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-			<xs:enumeration name="Montage">
-                <xs:annotation>
-                    <xs:documentation>
-                        Loadcase type is an Montage
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-        </xs:restriction>
     </xs:complexType>
 
     <xs:complexType name="Material">
@@ -413,12 +389,18 @@
                         </xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
-				<xs:attribute name="Type" type="xs:integer">
+				<xs:attribute name="Type">
                     <xs:annotation>
                         <xs:documentation>
-                            Type of Bend
+                            Type of Bend, Bend = 1, Elbow = 2
                         </xs:documentation>
                     </xs:annotation>
+					<xs:simpleType>
+                        <xs:restriction base="xs:integer">
+                            <xs:minInclusive value="1"/>
+                            <xs:maxInclusive value="2"/>
+                        </xs:restriction>
+                    </xs:simpleType>
                 </xs:attribute>
 				<xs:attribute name="StrPipeUtil" type="xs:decimal">
                     <xs:annotation>
@@ -430,30 +412,6 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
-	<xs:simpleType name="TypeOfBend">
-        <xs:annotation>
-            <xs:documentation>
-                Enumeration of used Reducers
-            </xs:documentation>
-        </xs:annotation>
-        <xs:restriction base="xs:integer">
-            <xs:enumeration name="Bend" value="1">
-                <xs:annotation>
-                    <xs:documentation>
-                        Construction type bend
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration name="Elbow" value="2">
-                <xs:annotation>
-                    <xs:documentation>
-                        Construction type elbow
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>	
-        </xs:restriction>
-    </xs:simpleType>
 
     <xs:complexType name="Tee">
         <xs:annotation>
@@ -528,138 +486,36 @@
                         </xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
-				<xs:attribute name="TypeOfBranch" type="xs:integer">
+				<xs:attribute name="TypeOfBranch">
                     <xs:annotation>
                         <xs:documentation>
                             Type of the Branch, see dokumentation
                         </xs:documentation>
                     </xs:annotation>
+					<xs:simpleType>
+                        <xs:restriction base="xs:integer">
+                            <xs:enumeration value="0"/>
+                            <xs:enumeration value="5"/>
+                            <xs:enumeration value="1"/>
+                            <xs:enumeration value="2"/>
+                            <xs:enumeration value="4"/>
+                            <xs:enumeration value="3"/>
+                            <xs:enumeration value="6"/>
+                            <xs:enumeration value="7"/>
+                            <xs:enumeration value="8"/>
+                            <xs:enumeration value="9"/>
+                            <xs:enumeration value="11"/>
+                            <xs:enumeration value="12"/>
+                            <xs:enumeration value="14"/>
+                            <xs:enumeration value="31"/>
+                            <xs:enumeration value="32"/>
+                            <xs:enumeration value="34"/>
+                        </xs:restriction>
+                    </xs:simpleType>
                 </xs:attribute>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
-	<xs:simpleType name="TypeOfTee">
-        <xs:annotation>
-            <xs:documentation>
-                Enumeration of used Branches and Tees
-            </xs:documentation>
-        </xs:annotation>
-        <xs:restriction base="xs:integer">
-            <xs:enumeration name="CombinationNotUsed" value="0">
-                <xs:annotation>
-                    <xs:documentation>
-                        Combination not used
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration name="Unreinforced" value="5">
-                <xs:annotation>
-                    <xs:documentation>
-                        Construction type Unreinforced
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>	
-			<xs:enumeration name="Reinforced_Run" value="1">
-                <xs:annotation>
-                    <xs:documentation>
-                        Construction type Reinforced Run
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>	
-			<xs:enumeration name="Reinforced_Branch" value="2">
-                <xs:annotation>
-                    <xs:documentation>
-                        Construction type Reinforced Branch
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>	
-			<xs:enumeration name="Reinforced_Run_Branch" value="4">
-                <xs:annotation>
-                    <xs:documentation>
-                        Construction type Reinforced Run Branch
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>	
-			<xs:enumeration name="ReinforcementPad" value="3">
-                <xs:annotation>
-                    <xs:documentation>
-                        Construction type Reinforcement Pad
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>	
-			<xs:enumeration name="T_Fitting" value="6">
-                <xs:annotation>
-                    <xs:documentation>
-                        Construction type T-Fitting
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>	
-			<xs:enumeration name="T_Fitting_Unreinforced_TypeA" value="7">
-                <xs:annotation>
-                    <xs:documentation>
-                        Construction type T Fitting Unreinforced Type A
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>	
-			<xs:enumeration name="T_Fitting_Reinforced_TypeB" value="8">
-                <xs:annotation>
-                    <xs:documentation>
-                        Construction type T Fitting Reinforced Type B
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-			<xs:enumeration name="Weldolet" value="9">
-                <xs:annotation>
-                    <xs:documentation>
-                        Construction type Weldolet
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-			<xs:enumeration name="Reinforced_Run_Di_Fix" value="11">
-                <xs:annotation>
-                    <xs:documentation>
-                        Construction type Reinforced Run Di Fix
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>			
-			<xs:enumeration name="Reinforced_Branch_Di_Fix" value="12">
-                <xs:annotation>
-                    <xs:documentation>
-                        Construction type Reinforced Branch Di Fix
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>	
-			<xs:enumeration name="Reinforced_Run_Branch_Di_Fix" value="14">
-                <xs:annotation>
-                    <xs:documentation>
-                        Construction type Reinforced Run Branch Di Fix
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-			<xs:enumeration name="Reinforced_Run_Dm_Fix" value="31">
-                <xs:annotation>
-                    <xs:documentation>
-                        Construction type Reinforced Run Dm Fix
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>	
-			<xs:enumeration name="Reinforced_Branch_Dm_Fix" value="32">
-                <xs:annotation>
-                    <xs:documentation>
-                        Construction type Reinforced Branch Dm Fix
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>				
-			<xs:enumeration name="Reinforced_Run_Branch_Dm_Fix" value="34">
-                <xs:annotation>
-                    <xs:documentation>
-                        Construction type Reinforced Run Branch Dm Fix
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>				
-        </xs:restriction>
-    </xs:simpleType>
 
     <xs:complexType name="Reducer">
         <xs:annotation>
@@ -699,12 +555,18 @@
                         </xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
-                <xs:attribute name="Type" type="xs:integer">
-                    <xs:annotation>
+                <xs:attribute name="Type">
+					<xs:annotation>
                         <xs:documentation>
-                            Type of reducer
-                        </xs:documentation>
+                            Type of reducer, Concentric = 1, Excentric = 2
+						</xs:documentation>
                     </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:integer">
+                            <xs:minInclusive value="1"/>
+                            <xs:maxInclusive value="2"/>
+                        </xs:restriction>
+                    </xs:simpleType>
                 </xs:attribute>
                 <xs:attribute name="HasKnuckle" type="xs:integer" use="required">
                     <xs:annotation>
@@ -716,30 +578,6 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    
-	<xs:simpleType name="TypeOfReducer">
-        <xs:annotation>
-            <xs:documentation>
-                Enumeration of used Reducers
-            </xs:documentation>
-        </xs:annotation>
-        <xs:restriction base="xs:integer">
-            <xs:enumeration name="Concentric" value="1">
-                <xs:annotation>
-                    <xs:documentation>
-                        Construction type concentric
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration name="Excentric" value="2">
-                <xs:annotation>
-                    <xs:documentation>
-                        Construction type excentric
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>	
-        </xs:restriction>
-    </xs:simpleType>
 	
     <xs:complexType name="Cap">
         <xs:annotation>
@@ -800,41 +638,23 @@
                         </xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
-                <xs:attribute name="Type" type="xs:integer">
+                <xs:attribute name="Type" >
                     <xs:annotation>
                         <xs:documentation>
                             Type of cap
                         </xs:documentation>
-                    </xs:annotation>                    
+                    </xs:annotation>  
+                    <xs:simpleType>
+                        <xs:restriction base="xs:integer">
+                            <xs:minInclusive value="1"/>
+                            <xs:maxInclusive value="2"/>
+                        </xs:restriction>
+                    </xs:simpleType>					
                 </xs:attribute>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    
-	<xs:simpleType name="TypeOfCaps">
-        <xs:annotation>
-            <xs:documentation>
-                Enumeration of used Caps
-            </xs:documentation>
-        </xs:annotation>
-        <xs:restriction base="xs:integer">
-            <xs:enumeration name="Korbbogenboden" value="1">
-                <xs:annotation>
-                    <xs:documentation>
-                        Construction type Korbbogenboden
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration name="Kloepperboden" value="2">
-                <xs:annotation>
-                    <xs:documentation>
-                        Construction type Kloepperboden
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>	
-        </xs:restriction>
-    </xs:simpleType>
-	
+    	
     <xs:complexType name="Flange">
         <xs:annotation>
             <xs:documentation>
@@ -852,12 +672,29 @@
 				   </xs:annotation>
 				  </xs:element>
 				</xs:sequence>
-				<xs:attribute name="TypeOfFlange" type="xs:integer">
+				<xs:attribute name="TypeOfFlange" >
 					<xs:annotation>
 						<xs:documentation>
 							Type of flange, see documentation
 						</xs:documentation>
 					</xs:annotation>
+					<xs:simpleType>
+                        <xs:restriction base="xs:integer">
+                            <xs:enumeration value="1"/>
+                            <xs:enumeration value="2"/>
+                            <xs:enumeration value="4"/>
+                            <xs:enumeration value="5"/>
+                            <xs:enumeration value="11"/>
+                            <xs:enumeration value="12"/>
+                            <xs:enumeration value="13"/>
+                            <xs:enumeration value="21"/>
+                            <xs:enumeration value="32"/>
+                            <xs:enumeration value="34"/>
+                            <xs:enumeration value="35"/>
+                            <xs:enumeration value="36"/>
+                            <xs:enumeration value="37"/>
+                        </xs:restriction>
+                    </xs:simpleType>
 				</xs:attribute>
 				<xs:attribute name="DN" type="xs:decimal">
 					<xs:annotation>
@@ -911,107 +748,6 @@
 			</xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
-	<xs:simpleType name="TypeOfFlange">
-        <xs:annotation>
-            <xs:documentation>
-                Enumeration of used Flange
-            </xs:documentation>
-        </xs:annotation>
-        <xs:restriction base="xs:integer">
-            <xs:enumeration name="Plate_flange_for_welding" value="1">
-                <xs:annotation>
-                    <xs:documentation>
-                        Construction type plate flange for welding
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration name="Loose_flange_for_collar_ring" value="2">
-                <xs:annotation>
-                    <xs:documentation>
-                        Construction type loose flange for collar ring
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration name="Loose_flange_or_Weld_neck_collar" value="4">
-                <xs:annotation>
-                    <xs:documentation>
-                        Construction type Loose flange or weld neck collar
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration name="Blank_Flange" value="5">
-                <xs:annotation>
-                    <xs:documentation>
-                        Construction type Blank flange
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration name="Weld_neck_flange" value="11">
-                <xs:annotation>
-                    <xs:documentation>
-                        Construction type Weld neck flange
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration name="Hubbed_slip_on_flange" value="12">
-                <xs:annotation>
-                    <xs:documentation>
-                        Construction type hubbed slip on flange
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-			<xs:enumeration name="Hubed_threaded_flange" value="13">
-                <xs:annotation>
-                    <xs:documentation>
-                        Construction type hubed threaded flange
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-			<xs:enumeration name="Integral_flange" value="21">
-                <xs:annotation>
-                    <xs:documentation>
-                        Construction type Integral flange
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-			<xs:enumeration name="weld_on_late_collar" value="32">
-                <xs:annotation>
-                    <xs:documentation>
-                        Construction type weld on late collar
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>			
-			<xs:enumeration name="Weld_neck_collar" value="34">
-                <xs:annotation>
-                    <xs:documentation>
-                        Construction type Weld neck collar
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>	
-			<xs:enumeration name="Weldring_neck" value="35">
-                <xs:annotation>
-                    <xs:documentation>
-                        Construction type Weldring neck
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>		
-			<xs:enumeration name="Pressed_collar_long_neck" value="36">
-                <xs:annotation>
-                    <xs:documentation>
-                        Construction type Pressed collar long neck
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-			<xs:enumeration name="Pressed_collar" value="37">
-                <xs:annotation>
-                    <xs:documentation>
-                        Construction type Pressed collar
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>			
-        </xs:restriction>
-    </xs:simpleType>
 
 	<xs:complexType name="Blank">
         <xs:annotation>
@@ -1079,68 +815,26 @@
 						</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
-				<xs:attribute name="Type" type="xs:integer" use="required">
+				<xs:attribute name="Type" use="required">
 					<xs:annotation>
 						<xs:documentation>
 							Type of Blank
 						</xs:documentation>
 					</xs:annotation>
+					<xs:simpleType>
+                        <xs:restriction base="xs:integer">
+                            <xs:enumeration value="0"/>
+                            <xs:enumeration value="1"/>
+                            <xs:enumeration value="2"/>
+                            <xs:enumeration value="3"/>
+                            <xs:enumeration value="4"/>
+                            <xs:enumeration value="6"/>
+                        </xs:restriction>
+                    </xs:simpleType>
 				</xs:attribute>
 			</xs:extension>
         </xs:complexContent>
 	</xs:complexType>
-	
-	<xs:simpleType name="TypeOfBlank">
-        <xs:annotation>
-            <xs:documentation>
-                Enumeration of used Blanks
-            </xs:documentation>
-        </xs:annotation>
-        <xs:restriction base="xs:integer">
-            <xs:enumeration name="TongueAndGroove" value="0">
-                <xs:annotation>
-                    <xs:documentation>
-                        Construction type tongue and groove
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration name="FlatGasketArea" value="1">
-                <xs:annotation>
-                    <xs:documentation>
-                        Construction type flat gasket area
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration name="SealingBar" value="2">
-                <xs:annotation>
-                    <xs:documentation>
-                        Construction type sealing bar
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration name="Tongue" value="3">
-                <xs:annotation>
-                    <xs:documentation>
-                        Construction type tongue
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration name="Groove" value="4">
-                <xs:annotation>
-                    <xs:documentation>
-                        Construction type groove
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration name="Recess" value="6">
-                <xs:annotation>
-                    <xs:documentation>
-                        Construction type recess
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-        </xs:restriction>
-    </xs:simpleType>
 	
     <xs:complexType name="Components">
         <xs:annotation>
@@ -1230,7 +924,6 @@
             </xs:element>
         </xs:sequence>
     </xs:complexType>
-
 
     <xs:simpleType name="UnitOfMeasure">
         <xs:annotation>
