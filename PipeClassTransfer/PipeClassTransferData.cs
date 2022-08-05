@@ -176,8 +176,8 @@ namespace PipeClassTransfer
         /// </summary>
         public enum TypeOfCaps
         {
-            Korbbogenboden = 1,
-            Kloepperboden = 2
+            Korbbogenboden = 22,
+            Kloepperboden = 21
         }
 
         /// <summary>
