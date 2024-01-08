@@ -122,43 +122,43 @@ namespace PipeClassTransfer
         public enum TypeOfFlanges
         {
             //      01: Glatter Anschweißflansch
-            Plate_flange_for_welding = 1,
+            Plate_flange_for_welding = 101,
 
             //      02: Losflansch für Bund/Ring/Bördel
-            Loose_flange_for_collar_ring = 2,
+            Loose_flange_for_collar_ring = 302,
 
             //      04: Losflansch für Vorschweißbund
-            Loose_flange_or_Weld_neck_collar = 4,
+            Loose_flange_or_Weld_neck_collar = 304,
 
             //      05: Blank flange
-            Blank_Flange = 5,
+            Blank_Flange = 105,
 
             //      11: Vorschweißflansch
-            Weld_neck_flange = 11,
+            Weld_neck_flange = 111,
 
             //      12: Überschiebflansch mit Ansatz
-            Hubbed_slip_on_flange = 12,
+            Hubbed_slip_on_flange = 112,
 
             //      13: Gewindeflansch mit Ansatz
-            Hubed_threaded_flange = 13,
+            Hubed_threaded_flange = 113,
 
             //      21: Integralflansch
-            Integral_flange = 21,
+            Integral_flange = 121,
 
             //      32: Glatter Anschweißbund
-            weld_on_late_collar = 32,
+            weld_on_late_collar = 201,
 
             //      34: Vorschweißbund
-            Weld_neck_collar = 34,
+            Weld_neck_collar = 211,
 
             //      35: Vorschweißring
-            Weldring_neck = 35,
+            Weldring_neck = 217,
 
             //      36: Pressbördel mit langem Ansatz
-            Pressed_collar_long_neck = 36,
+            Pressed_collar_long_neck = 218,
 
             //      37: Pressbördel
-            Pressed_collar = 37,
+            Pressed_collar = 219,
         }
 
         /// <summary>
@@ -185,12 +185,12 @@ namespace PipeClassTransfer
         /// </summary>
         public enum TypeOfBlank
         {
-            TongueAndGroove = 0,
-            FlatGasketArea = 1,
-            SealingBar = 2,
-            Tongue = 3,
-            Groove = 4,
-            Recess = 6
+            TongueAndGroove = 400,
+            FlatGasketArea = 401,
+            SealingBar = 402,
+            Tongue = 403,
+            Groove = 404,
+            Recess = 406
         }
         
 
