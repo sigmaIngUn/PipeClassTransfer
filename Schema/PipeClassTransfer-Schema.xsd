@@ -646,8 +646,8 @@
                     </xs:annotation>  
                     <xs:simpleType>
                         <xs:restriction base="xs:integer">
-                            <xs:minInclusive value="1"/>
-                            <xs:maxInclusive value="2"/>
+                            <xs:minInclusive value="21"/>
+                            <xs:maxInclusive value="22"/>
                         </xs:restriction>
                     </xs:simpleType>					
                 </xs:attribute>
@@ -664,7 +664,7 @@
         <xs:complexContent>
             <xs:extension base="Component">
 				<xs:sequence>
-				  <xs:element name="C_Mill_Standard" type="StandardDef" maxOccurs="1">
+				  <xs:element name="C_Mill_Standard" type="StandardDef" minOccurs="0" maxOccurs="1">
 					<xs:annotation>
 					  <xs:documentation>
 						Definition of Components Mill-Tolerance Standard
@@ -680,19 +680,19 @@
 					</xs:annotation>
 					<xs:simpleType>
                         <xs:restriction base="xs:integer">
-                            <xs:enumeration value="1"/>
-                            <xs:enumeration value="2"/>
-                            <xs:enumeration value="4"/>
-                            <xs:enumeration value="5"/>
-                            <xs:enumeration value="11"/>
-                            <xs:enumeration value="12"/>
-                            <xs:enumeration value="13"/>
-                            <xs:enumeration value="21"/>
-                            <xs:enumeration value="32"/>
-                            <xs:enumeration value="34"/>
-                            <xs:enumeration value="35"/>
-                            <xs:enumeration value="36"/>
-                            <xs:enumeration value="37"/>
+                            <xs:enumeration value="101"/>
+                            <xs:enumeration value="302"/>
+                            <xs:enumeration value="304"/>
+                            <xs:enumeration value="105"/>
+                            <xs:enumeration value="111"/>
+                            <xs:enumeration value="112"/>
+                            <xs:enumeration value="113"/>
+                            <xs:enumeration value="121"/>
+                            <xs:enumeration value="201"/>
+                            <xs:enumeration value="211"/>
+                            <xs:enumeration value="217"/>
+                            <xs:enumeration value="218"/>
+                            <xs:enumeration value="219"/>
                         </xs:restriction>
                     </xs:simpleType>
 				</xs:attribute>
@@ -823,12 +823,12 @@
 					</xs:annotation>
 					<xs:simpleType>
                         <xs:restriction base="xs:integer">
-                            <xs:enumeration value="0"/>
-                            <xs:enumeration value="1"/>
-                            <xs:enumeration value="2"/>
-                            <xs:enumeration value="3"/>
-                            <xs:enumeration value="4"/>
-                            <xs:enumeration value="6"/>
+                            <xs:enumeration value="400"/>
+                            <xs:enumeration value="401"/>
+                            <xs:enumeration value="402"/>
+                            <xs:enumeration value="403"/>
+                            <xs:enumeration value="404"/>
+                            <xs:enumeration value="406"/>
                         </xs:restriction>
                     </xs:simpleType>
 				</xs:attribute>
