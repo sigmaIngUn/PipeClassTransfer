@@ -30,6 +30,11 @@ namespace PipeClassTransfer
     public class Component
     {
         /// <summary>
+        /// Contains the schedule acc. to the standard
+        /// </summary>
+        [System.Xml.Serialization.XmlAttribute]
+        public int Schedule { get; set; } = -1;
+        /// <summary>
         /// Unique Id of this Component
         /// </summary>
         [System.Xml.Serialization.XmlAttribute]
