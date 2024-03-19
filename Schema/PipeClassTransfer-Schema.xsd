@@ -288,10 +288,10 @@
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="Schedule" type="xs:string">
+        <xs:attribute name="Schedule_Row" type="xs:string">
             <xs:annotation>
                 <xs:documentation>
-                    Schedule of the Component
+                    Contains the schedule or the row acc. to the standard (EN/ASME)
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
