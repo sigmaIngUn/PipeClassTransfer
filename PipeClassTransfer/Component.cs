@@ -30,6 +30,11 @@ namespace PipeClassTransfer
     public class Component
     {
         /// <summary>
+        /// Contains the schedule or the row acc. to the standard (EN/ASME)
+        /// </summary>
+        [System.Xml.Serialization.XmlAttribute]
+        public string Schedule_Row { get; set; } = string.Empty;
+        /// <summary>
         /// Unique Id of this Component
         /// </summary>
         [System.Xml.Serialization.XmlAttribute]
