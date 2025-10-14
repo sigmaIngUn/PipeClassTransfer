@@ -15,7 +15,6 @@
 // along with PipeClassTransfer.  If not, see <http://www.gnu.org/licenses/>.
 
 using System.Collections.Generic;
-using System.ComponentModel;
 
 namespace PipeClassTransfer
 {
@@ -176,8 +175,9 @@ namespace PipeClassTransfer
         /// </summary>
         public enum TypeOfCaps
         {
+            Kloepperboden = 21,
             Korbbogenboden = 22,
-            Kloepperboden = 21
+            EllipticalHead = 24,
         }
 
         /// <summary>
@@ -192,7 +192,7 @@ namespace PipeClassTransfer
             Groove = 404,
             Recess = 406
         }
-        
+
 
         /// <summary>
         /// ID of the exporting Programm see https://github.com/sigmaIngUn/PipeClassTransfer/wiki/KnownExporters
@@ -211,7 +211,7 @@ namespace PipeClassTransfer
         /// </summary>
         [System.Xml.Serialization.XmlAttribute]
         public UnitOfMeasure Unit { get; set; }
-        
+
         /// <summary>
         /// List of Pipe-Class datasets
         /// </summary>
